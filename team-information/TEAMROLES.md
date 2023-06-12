@@ -2,6 +2,39 @@
 2. Gitmaster
 3. Testmaster
 
+Roles:
+### Taskmaster:
+- Overseeing the project's task management system. (Notion / Github Projects)
+- Breaking down project requirements into specific tasks and assigning them to team members.
+- Monitoring the progress of tasks and ensuring their timely completion.
+- Coordinating with team members to align task dependencies and priorities.
+- Conducting regular stand-up meetings to discuss task status and address any blockers.
+- Identifying and addressing any resource or scheduling constraints that may impact project delivery.
+- Collaborating with other stakeholders (e.g., project managers, designers, and testers) to ensure smooth task execution.
+- Tracking project milestones and providing updates on task completion to the project team.
+
+### Gitmaster:
+- Managing the Git repository for the e-commerce web app.
+- Creating and managing branches for different features, bug fixes, and improvements.
+- Ensuring the repository's organization, including proper branch naming conventions.
+- Collaborating with team members to resolve any Git-related issues.
+- Ensuring the repository's health by monitoring and maintaining its integrity.
+- Reviewing and merging pull requests from team members.
+- Managing Git workflows, such as rebasing, squashing commits, and resolving merge conflicts.
+- Maintaining a clean commit history and enforcing best practices for version control.
+
+### Testmaster:
+- Designing and implementing a comprehensive testing strategy for the e-commerce web app.
+- Creating test plans, test cases, and test scripts to cover various functional and non-functional requirements.
+- Conducting unit tests, integration tests, and end-to-end tests to ensure the app's quality.
+- Automating test cases and integrating them into the continuous integration/continuous deployment (CI/CD) pipeline.
+- Identifying and reporting bugs and issues, and working with the development team to resolve them.
+- Conducting performance testing to ensure the app can handle expected loads.
+- Collaborating with developers to create and maintain a culture of test-driven development (TDD).
+- Staying up to date with industry best practices, emerging testing tools, and technologies.
+
+
+
 Team Roles 06/12 - 06/14:
 
 - Sean Kutash Taskmaster

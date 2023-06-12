@@ -9,8 +9,10 @@ High level overview: pull latest main, make a branch, commit changes, push to Gi
 3. `git pull` to get main up to date
 4. `git checkout -b YOUR-NEW-BRANCH-NAME` to switch to a new branch
 5. Make commits for a given feature.
-  - Use semantic commit messages: `type(scope): message` e.g. `feat(client): switch to React-Redux`
-  - Keep commits related to that feature branch. If you need to make other commits, **go back to main**, make a new branch, add those separate commits etc.
+
+- Use semantic commit messages: `type(scope): message` e.g. `feat(client): switch to React-Redux`
+- Keep commits related to that feature branch. If you need to make other commits, **go back to main**, make a new branch, add those separate commits etc.
+
 6. When you are done, `git push -u origin YOUR-NEW-BRANCH-NAME`
 7. Navigate to GitHub
 8. Select "open pull request"
