@@ -33,8 +33,6 @@ Roles:
 - Collaborating with developers to create and maintain a culture of test-driven development (TDD).
 - Staying up to date with industry best practices, emerging testing tools, and technologies.
 
-
-
 Team Roles 06/12 - 06/14:
 
 - Sean Kutash Taskmaster
