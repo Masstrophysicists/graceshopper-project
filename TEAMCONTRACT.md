@@ -1,6 +1,6 @@
-# Project: Lunchcapades
+# Project: GraceShopper
 
-_A lunch-trading app for adults_
+_An e-commerce app for adults_
 
 This document describes our team social contract for this project
 
@@ -20,23 +20,23 @@ This document describes our team social contract for this project
 
 ## Daily Process:
 
-- Morning standup started by yesterday's Taskmaster
-- New roles assigned (by yesterday’s Taskmaster)
-- Yesterday? Today? Obstacles? (by today’s Taskmaster)
+- Morning standup started by the last Taskmaster (11:30 AM)
+- New roles assigned (by the last Taskmaster)
+- What did we accomplish Yesterday? What's the plan for Today? Are there any Obstacles? (by today’s Taskmaster)
 - Pair program on assigned tasks
 - Record issues that are non-blocking and discuss right after lunch at re-group meeting
 - Bring up any blocking issues after 15 minutes of spinning your wheels
 - At 2:30pm have re-group meeting where you check-in with blockers, status updates, and plan for EOD merge
-- Immediately prior to end of day make applicable PRs, review each other’s code and merge into master
+- Immediately prior to end of day make applicable Pull Requests, review each other’s code and merge into master
 
 ## Team Expectations:
 
-- Each of us reserves the rights to our nights and weekends, and we have all been straightforward about when and how we can commit to working on the project
+- Each of us reserves the rights to our nights and weekends, and we have all been straightforward about when and how we can commit to working on the project.
 - If you have a blocking issue, slack before interrupting another’s train of coding-thought
 - We will assign tasks vertically (instead of horizontally)
 - None of us will specialize in terms of front-end and back-end code
-- Don’t interrupt - raise your hand
 - Share the mic
+- Don’t interrupt - raise your hand
 - Disagree often and discuss -- argue infrequently
 - At least message the group when you change what you are working on
 
