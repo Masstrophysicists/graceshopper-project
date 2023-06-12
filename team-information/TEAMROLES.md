@@ -43,7 +43,7 @@ Team Roles 06/12 - 06/14:
 
 Questions(EOD):
 
-- Will it be problematic to work in order of the tier list, or whats the best way to complete this?
+-
 - Clarification for testmaster's role.
 -
 
