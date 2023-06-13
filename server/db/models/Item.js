@@ -14,7 +14,7 @@ const Item = db.define("item", {
     allowNull: false,
     validate: {
       notEmpty: true,
-      isDecimal: true,
+      isInt: true,
     },
   },
   description: {
