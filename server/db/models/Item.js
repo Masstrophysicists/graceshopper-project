@@ -14,7 +14,7 @@ const Item = db.define("item", {
     allowNull: false,
     validate: {
       notEmpty: true,
-			isDecimal: true,
+      isDecimal: true,
     },
   },
   description: {
@@ -26,3 +26,5 @@ const Item = db.define("item", {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png",
   },
 });
+
+module.exports = Item;
