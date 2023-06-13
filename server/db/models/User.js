@@ -58,12 +58,13 @@ User.authenticate = async function ({ username, password }) {
 User.findByToken = async function (token) {
   try {
     const { id } = await jwt.verify(token, process.env.JWT);
-    const user = User.findByPk(id);
+    const user = await User.findByPk(id);
     if (!user) {
       throw "nooo";
     }
     return user;
   } catch (ex) {
+    console.log(ex);
     const error = Error("bad token");
     error.status = 401;
     throw error;
@@ -79,6 +80,8 @@ const hashPassword = async (user) => {
     user.password = await bcrypt.hash(user.password, SALT_ROUNDS);
   }
 };
+
+console.log("JWT:", process.env.JWT);
 
 User.beforeCreate(hashPassword);
 User.beforeUpdate(hashPassword);
