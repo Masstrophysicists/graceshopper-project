@@ -28,36 +28,35 @@ async function seed() {
       email: "asdf@gmail.com",
     }),
   ]);
+
+  const items = await Promise.all([
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+    Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
+  ]);
+
+  console.log(`seeded ${users.length} users`);
+  console.log(`seeded successfully`);
+  return {
+    users: {
+      cody: users[0],
+      murphy: users[1],
+    },
+    items: {},
+  };
 }
-
-const items = await Promise.all([
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-  Item.create({ name: "", price: 0, description: "", imageUrl: "" }),
-]);
-
-console.log(`seeded ${users.length} users`);
-console.log(`seeded successfully`);
-return {
-  users: {
-    cody: users[0],
-    murphy: users[1],
-  },
-  items: {},
-};
-
 /*
  We've separated the `seed` function from the `runSeed` function.
  This way we can isolate the error handling and exit trapping.
