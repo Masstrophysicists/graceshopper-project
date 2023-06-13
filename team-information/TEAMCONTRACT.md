@@ -22,12 +22,12 @@ This document describes our team social contract for this project
 
 - Morning standup started by the last Taskmaster (11:30 AM)
 - New roles assigned (by the last Taskmaster)
-- What did we accomplish Yesterday? What's the plan for Today? Are there any Obstacles? (by today’s Taskmaster)
+- What did we accomplish Yesterday? What's the plan for Today? Are there any Blockers? (by today’s Taskmaster)
 - Pair program on assigned tasks
 - Record issues that are non-blocking and discuss right after lunch at re-group meeting
 - Bring up any blocking issues after 15 minutes of spinning your wheels
 - At 2:30pm have re-group meeting where you check-in with blockers, status updates, and plan for EOD merge
-- Immediately prior to end of day make applicable Pull Requests, review each other’s code and merge into master
+- Immediately prior to end of day make applicable Pull Requests, review each other’s code and merge into master (5PM)
 
 ## Team Expectations:
 

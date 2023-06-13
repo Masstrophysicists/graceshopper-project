@@ -42,9 +42,6 @@ Team Roles 06/12 - 06/14:
 - Steven Davis Gitmaster
 
 Questions(EOD):
-
--
-- Clarification for testmaster's role.
 -
 
 Deadline: Complete Tier 1 by Friday 06/16/23 and Tier 2 by Thursday 06/22/23 at a minimum.
@@ -53,7 +50,7 @@ Deadline: Complete Tier 1 by Friday 06/16/23 and Tier 2 by Thursday 06/22/23 at 
 
 ### As an engineer, I want to:
 
--[] **Have a well-seeded database:** You can use a combination of Node.js/Express and PostgreSQL to create and seed your database. You can create a seed script using Node.js that generates data and uses SQL queries to insert this data into your PostgreSQL database. This will allow you to simulate a variety of scenarios for your user stories.
+-[] **Have a well-seeded database:** You can use a combination of Node.js/Express and PostgreSQL to create and seed your database. Modify the seed script that generates data and uses SQL queries to insert this data into your PostgreSQL database. This will allow you to simulate a variety of scenarios for your user stories.
 
 ### As an administrator, I want to be able to:
 
