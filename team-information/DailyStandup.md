@@ -11,6 +11,9 @@ Steven and Emily: Created two more models, Order and OderItem, adjusted item mod
 Chris, Frank, Sean:
 
 What am I doing today?
+Steven and Emily: Finish db and dummy data,
+
+
 
 
 
