@@ -1,4 +1,5 @@
 Goal:
+Get the backend up and running,
 
 Should be short (~15 minutes or less)
 
@@ -18,5 +19,6 @@ Couple of people to write express routes in conjunction with postgresql to verif
 (Frank and Chris)
 
 Do I have any blockers?
+We need to decide what items we are selling in our e-commerce store.
 
 Blocker: something outside of your control that is preventing you from making progress on the thing you’re doing today
