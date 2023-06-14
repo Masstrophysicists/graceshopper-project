@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 
 const SALT_ROUNDS = 5;
 
@@ -39,6 +40,7 @@ User.prototype.correctPassword = function (candidatePwd) {
 };
 
 User.prototype.generateToken = function () {
+  console.log(process.env.JWT);
   return jwt.sign({ id: this.id }, process.env.JWT);
 };
 
@@ -57,17 +59,16 @@ User.authenticate = async function ({ username, password }) {
 
 User.findByToken = async function (token) {
   try {
-    const { id } = await jwt.verify(token, process.env.JWT);
+    console.log(process.env.JWT);
+    const { id } = jwt.verify(token, process.env.JWT);
     const user = await User.findByPk(id);
     if (!user) {
-      throw "nooo";
+      throw new Error("User not found");
     }
     return user;
   } catch (ex) {
-    console.log(ex);
-    const error = Error("bad token");
-    error.status = 401;
-    throw error;
+    console.error("Error in findByToken:", ex);
+    throw ex;
   }
 };
 
