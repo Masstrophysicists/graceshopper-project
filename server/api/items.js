@@ -6,7 +6,9 @@ module.exports = router;
 
 router.get("/", async (req, res, next) => {
   try {
-    const items = await Item.findAll();
+    const items = await Item.findAll({
+      attributes: ["id", "name", "imageUrl"],
+    });
     res.json(items);
   } catch (err) {
     next(err);
