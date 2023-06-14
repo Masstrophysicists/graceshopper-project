@@ -6,7 +6,7 @@ const Items = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await axios.get("http://localhost:8080/api/items");
+      const response = await axios.get("http://localhost:8080/items");
       setItems(response.data);
     };
 
@@ -30,4 +30,4 @@ const Items = () => {
   );
 };
 
-
+export default Items;
