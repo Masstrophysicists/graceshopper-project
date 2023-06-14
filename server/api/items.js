@@ -4,6 +4,15 @@ const {
 } = require("../db");
 module.exports = router;
 
+router.get("/", async (req, res, next) => {
+  try {
+    const items = await Item.findAll();
+    res.json(items);
+  } catch (err) {
+    next(err);
+  }
+});
+
 async function requireAdmin(req, res, next) {
   if (!req.user || !req.user.isAdmin) {
     return res.sendStatus(403).send("You shall not pass!");
@@ -19,7 +28,7 @@ router.post("/", requireAdmin, async (req, res, next) => {
   }
 });
 
-router.put("/:itemId", async (req, res, next) => {
+router.put("/:itemId", requireAdmin, async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.itemId);
     if (!product) return res.sendStatus(404);
@@ -35,15 +44,6 @@ router.delete("/:itemId", requireAdmin, async (req, res, next) => {
     const item = await Item.findByPk(req.params.itemId);
     await item.destroy();
     res.sendStatus(204);
-  } catch (err) {
-    next(err);
-  }
-});
-
-router.get("/items", async (req, res, next) => {
-  try {
-    const items = await Item.findAll();
-    res.json(items);
   } catch (err) {
     next(err);
   }
