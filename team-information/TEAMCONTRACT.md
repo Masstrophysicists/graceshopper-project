@@ -6,11 +6,11 @@ This document describes our team social contract for this project
 
 ## Team Members:
 
-- Sean Kutash
-- Emily Paye
-- Frank Latino
-- Chris Almodovar
-- Steven Davis
+- Sean Kutash - GitMaster
+- Emily Paye - TestMasters
+- Frank Latino - TaskMasters
+- Chris Almodovar - TaskMaster
+- Steven Davis - TestMasters
 
 ## Roles:
 

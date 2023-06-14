@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 
 const SALT_ROUNDS = 5;
-
 const User = db.define("user", {
   username: {
     type: Sequelize.STRING,
@@ -40,7 +39,6 @@ User.prototype.correctPassword = function (candidatePwd) {
 };
 
 User.prototype.generateToken = function () {
-  console.log(process.env.JWT);
   return jwt.sign({ id: this.id }, process.env.JWT);
 };
 
@@ -59,7 +57,6 @@ User.authenticate = async function ({ username, password }) {
 
 User.findByToken = async function (token) {
   try {
-    console.log(process.env.JWT);
     const { id } = jwt.verify(token, process.env.JWT);
     const user = await User.findByPk(id);
     if (!user) {
@@ -81,8 +78,6 @@ const hashPassword = async (user) => {
     user.password = await bcrypt.hash(user.password, SALT_ROUNDS);
   }
 };
-
-console.log("JWT:", process.env.JWT);
 
 User.beforeCreate(hashPassword);
 User.beforeUpdate(hashPassword);
