@@ -57,6 +57,7 @@ async function seed() {
     items: {},
   };
 }
+
 /*
  We've separated the `seed` function from the `runSeed` function.
  This way we can isolate the error handling and exit trapping.

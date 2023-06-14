@@ -14,16 +14,8 @@ What am I doing today?
 Steven and Emily: Finish db and dummy data,
 
 
-
-
-
-Couple of people to investigate postgresqls data constraints to ensure data integrity.
-(Sean)
-
-Couple of people to write express routes in conjunction with postgresql to verify backend requests.
-(Frank and Chris)
-
 Do I have any blockers?
-We need to decide what items we are selling in our e-commerce store.
+Frank's Database connection needs to be debugged
+JWT Authorization is failing, needs to be investigated.
 
 Blocker: something outside of your control that is preventing you from making progress on the thing you’re doing today
