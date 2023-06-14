@@ -60,7 +60,7 @@ Deadline: Complete Tier 1 by Friday 06/16/23 and Tier 2 by Thursday 06/22/23 at 
 ### As a customer/visitor, I want to be able to:
 
 -[] **Access a deployed version of the website, view all available products, and view a single product:** You can use React to create a user-friendly frontend that fetches data from your Express server. Redux can be used to manage the state of your application, including the list of products and the currently viewed product.
--[] **Add a product to my cart and edit my cart:** You can use Redux to manage the state of the cart. When a product is added to the cart or the cart is edited, you can dispatch actions to update the state of the cart in your Redux store.
+-[] **Add a product to my cart and edit my cart:** You can use Redux to manage the state of the cart/order. When a product is added to the cart or the cart is edited, you can dispatch actions to update the state of the cart in your Redux store.
 -[] **"Checkout" the items in my cart:** You can create a checkout process that uses the state of the cart in your Redux store. When the checkout process is complete, you can dispatch an action to clear the cart.
 -[] **Create an account:** You can create a form in React that sends a POST request to your Express server with the user's information. The server can then insert this information into the PostgreSQL database.
 
