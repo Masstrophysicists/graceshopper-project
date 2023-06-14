@@ -52,14 +52,14 @@ async function seed() {
         "https://stardewvalleywiki.com/mediawiki/images/thumb/8/89/Wallpaper_001_Icon.png/54px-Wallpaper_001_Icon.png",
     }),
     Item.create({
-      name: "	Vinegar",
+      name: "Vinegar",
       price: 200,
       description: "An aged fermented liquid used in many cooking recipes.",
       imageUrl:
         "https://stardewvalleywiki.com/mediawiki/images/f/fe/Vinegar.png",
     }),
     Item.create({
-      name: "	Bean Starter",
+      name: "Bean Starter",
       price: 60,
       description:
         "Plant these in the spring. Takes 10 days to mature, but keeps producing after that. Grows on a trellis.",
@@ -67,7 +67,7 @@ async function seed() {
         "https://stardewvalleywiki.com/mediawiki/images/2/26/Bean_Starter.png",
     }),
     Item.create({
-      name: "	Potato Seeds",
+      name: "Potato Seeds",
       price: 50,
       description:
         "Plant these in the spring. Takes 6 days to mature, and has a chance of yielding multiple potatoes at harvest.",
@@ -83,7 +83,7 @@ async function seed() {
         "https://stardewvalleywiki.com/mediawiki/images/4/42/Tulip_Bulb.png",
     }),
     Item.create({
-      name: "	Pepper Seeds",
+      name: "Pepper Seeds",
       price: 40,
       description:
         "Plant these in the summer. Takes 5 days to mature, and continues to produce after first harvest.",
@@ -99,7 +99,7 @@ async function seed() {
         "https://stardewvalleywiki.com/mediawiki/images/8/81/Blueberry_Seeds.png",
     }),
     Item.create({
-      name: "	Radish Seeds",
+      name: "Radish Seeds",
       price: 40,
       description: "Plant these in the summer. Takes 6 days to mature.",
       imageUrl:
