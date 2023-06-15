@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Items = () => {
@@ -19,10 +20,11 @@ const Items = () => {
       <div>
         {items.map((item) => (
           <div key={item.id}>
-            <h3>{item.name}</h3>
-            <p>{item.description}</p>
+            <Link to={`/items/${item.id}`}>
+              <img src={item.imageUrl} />
+              <h3>{item.name}</h3>
+            </Link>
             <p>{item.price}</p>
-            <img src={item.imageUrl} />
           </div>
         ))}
       </div>
