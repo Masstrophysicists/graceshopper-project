@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const SingleItem = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState(null);
+  const userId = useSelector((state) => state.auth.me.id);
 
   const addToCart = async () => {
-    // We'll need to update this to get the order id from the URL.
-    const orderId = 1;
-
-    // The request body could include other information, like the quantity.
-    await axios.post(
-      `http://localhost:8080/api/orders/${orderId}/items`,
-      {
-        itemId,
-        qty: 1,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    try {
+      const { data } = await axios.post(`/api/orders/${userId}`, {
+        itemId: 1,
+        quantity: 1,
+      });
+      console.log("Added to cart:", data);
+    } catch (error) {
+      console.log("Error adding to cart", error);
+    }
   };
 
   useEffect(() => {

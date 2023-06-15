@@ -3,85 +3,70 @@ const {
   models: { Order, OrderItem, Item },
 } = require("../db");
 
-// Get all items in an order
-router.get("/:orderId", async (req, res, next) => {
+router.post("/:userId", async (req, res, next) => {
   try {
-    const order = await Order.findByPk(req.params.orderId, {
-      include: {
-        model: OrderItem,
-        include: Item, // Include the associated Item with each OrderItem
+    const { userId } = req.params;
+    const { itemId, quantity } = req.body;
+    const order = await Order.findOne({
+      where: {
+        userId: userId,
+        status: "created",
       },
     });
-
-    if (order.userId !== Number(req.user.id)) {
-      // Make sure the order belongs to the logged-in user
-      return res.sendStatus(403);
+    if (order) {
+      const existingOrderItem = await OrderItem.findOne({
+        where: {
+          orderId: order.id,
+          itemId: itemId,
+        },
+      });
+      if (existingOrderItem) {
+        existingOrderItem.quantity += quantity;
+        await existingOrderItem.save();
+        res.json(existingOrderItem);
+      } else {
+        const newOrderItem = await OrderItem.create({
+          orderId: order.id,
+          itemId: itemId,
+          quantity: quantity,
+          totalPrice: 100,
+        });
+        res.json(newOrderItem);
+      }
+    } else {
+      const newOrder = await Order.create({
+        userId: userId,
+        status: "created",
+      });
+      const newOrderItem = await OrderItem.create({
+        orderId: newOrder.id,
+        itemId: itemId,
+        quantity: quantity,
+      });
+      res.json(newOrderItem);
     }
-
-    res.json(order.orderItems);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
-// Add an item to an order
-router.post("/:orderId/items", async (req, res, next) => {
+router.get("/:userId", async (req, res, next) => {
   try {
-    const order = await Order.findByPk(req.params.orderId);
-
-    if (!req.user || order.userId !== req.user.id) {
-      // Make sure the order belongs to the logged-in user
-      return res.sendStatus(403);
-    }
-
-    const item = await Item.findByPk(req.body.itemId);
-
-    const orderItem = await OrderItem.create({
-      quantity: req.body.quantity || 1, // default to 1 if no quantity is provided
-      totalPrice: item.price * (req.body.quantity || 1),
+    const { userId } = req.params;
+    const order = await Order.findOne({
+      where: {
+        userId: userId,
+        status: "created",
+      },
+      include: OrderItem,
     });
-
-    await orderItem.setItem(item);
-    await orderItem.setOrder(order);
-    await orderItem.save();
-
-    res.json(orderItem);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// Update an item in an order
-router.put("/:orderId/items/:orderItemId", async (req, res, next) => {
-  try {
-    const orderItem = await OrderItem.findByPk(req.params.orderItemId);
-
-    if (orderItem.orderId !== Number(req.params.orderId)) {
-      // Make sure the order item is in the specified order
-      return res.sendStatus(403);
+    if (!order) {
+      return res.status(404).send("No order found");
+    } else {
+      res.json(order);
     }
-
-    const updatedOrderItem = await orderItem.update(req.body);
-    res.json(updatedOrderItem);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// Delete an item from an order
-router.delete("/:orderId/items/:orderItemId", async (req, res, next) => {
-  try {
-    const orderItem = await OrderItem.findByPk(req.params.orderItemId);
-
-    if (orderItem.orderId !== Number(req.params.orderId)) {
-      // Make sure the order item is in the specified order
-      return res.sendStatus(403);
-    }
-
-    await orderItem.destroy();
-    res.sendStatus(204);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    next(error);
   }
 });
 
