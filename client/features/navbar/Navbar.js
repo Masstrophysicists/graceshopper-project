@@ -26,6 +26,9 @@ const Navbar = () => {
             <button type="button" onClick={() => navigate("/items")}>
               Items
             </button>
+            <button type="button" onClick={() => navigate("/orders")}>
+              Orders
+            </button>
           </div>
         ) : (
           <div>

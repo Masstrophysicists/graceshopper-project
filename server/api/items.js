@@ -15,6 +15,16 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:itemId", async (req, res, next) => {
+  try {
+    const item = await Item.findByPk(req.params.itemId);
+    if (!item) return res.sendStatus(404);
+    res.json(item);
+  } catch (err) {
+    next(err);
+  }
+});
+
 async function requireAdmin(req, res, next) {
   if (!req.user || !req.user.isAdmin) {
     return res.sendStatus(403).send("You shall not pass!");

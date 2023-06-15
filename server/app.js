@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+const { User } = require("./db").models;
 module.exports = app;
 
 // logging middleware
@@ -9,6 +10,18 @@ app.use(morgan("dev"));
 
 // body parsing middleware
 app.use(express.json());
+
+// auth and api routes
+const attachUser = async (req, res, next) => {
+  const token = req.headers.authorization;
+  if (token) {
+    const user = await User.findByToken(token);
+    req.user = user;
+  }
+  next();
+};
+
+app.use(attachUser);
 
 // auth and api routes
 app.use("/auth", require("./auth"));
