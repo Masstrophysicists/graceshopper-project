@@ -10,25 +10,29 @@ const Order = () => {
     const fetchOrderItems = async () => {
       const { data } = await axios.get(`/api/orders/${userId}`);
       console.log("1 Order items:", data);
-      setOrderItems(data);
-      console.log("2 Order items:", orderItems);
+      setOrderItems(data.orderItems);
     };
     fetchOrderItems();
   }, [userId]);
 
+  useEffect(() => {
+    console.log("2 Order items:", orderItems);
+  }, [orderItems]);
+
   return (
     <div>
       <h1>Your order</h1>
-      {orderItems.map((orderItem) => (
-        <div key={orderItem.id}>
-          <h3>{orderItem.item.name}</h3>
-          <img src={orderItem.item.imageUrl} alt={orderItem.item.name} />
-          <p>{orderItem.item.description}</p>
-          <p>{orderItem.item.price}</p>
-          <p>Quantity: {orderItem.quantity}</p>
-          <p>Total price: {orderItem.totalPrice}</p>
-        </div>
-      ))}
+      {orderItems &&
+        orderItems.map((orderItem) => (
+          <div key={orderItem.id}>
+            <h3>{orderItem.item.name}</h3>
+            <img src={orderItem.item.imageUrl} alt={orderItem.item.name} />
+            <p>{orderItem.item.description}</p>
+            <p>{orderItem.item.price}</p>
+            <p>Quantity: {orderItem.quantity}</p>
+            <p>Total price: {orderItem.totalPrice}</p>
+          </div>
+        ))}
     </div>
   );
 };
