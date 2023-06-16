@@ -145,6 +145,13 @@ async function seed() {
       imageUrl:
         "https://stardewvalleywiki.com/mediawiki/images/9/95/Jazz_Seeds.png",
     }),
+    Item.create({
+      name: "Bok Choy Seeds",
+      price: 50,
+      description: "Plant these in the fall. Takes 4 days to mature.",
+      imageUrl:
+        "https://stardewvalleywiki.com/mediawiki/images/2/21/Bok_Choy_Seeds.png",
+    }),
   ]);
 
   console.log(`seeded ${users.length} users`);
