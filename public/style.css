@@ -1,4 +1,12 @@
-body {
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* body {
   font-family: sans-serif;
 }
 
@@ -18,4 +26,4 @@ nav a {
 form div {
   margin: 1em;
   display: inline-block;
-}
+} */
