@@ -2,7 +2,9 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+const cors = require("cors");
 const { User } = require("./db").models;
+
 module.exports = app;
 
 // logging middleware
@@ -10,6 +12,13 @@ app.use(morgan("dev"));
 
 // body parsing middleware
 app.use(express.json());
+
+const corsOptions = {
+  origin: true,
+};
+
+// cors middleware
+app.use(cors(corsOptions));
 
 // auth and api routes
 const attachUser = async (req, res, next) => {

@@ -12,12 +12,18 @@ router.post("/:userId", async (req, res, next) => {
         userId: userId,
         status: "created",
       },
+      include: OrderItem,
+      include: Item,
     });
     if (order) {
       const existingOrderItem = await OrderItem.findOne({
         where: {
           orderId: order.id,
           itemId: itemId,
+        },
+        where: {
+          include: OrderItem,
+          include: Item,
         },
       });
       if (existingOrderItem) {
