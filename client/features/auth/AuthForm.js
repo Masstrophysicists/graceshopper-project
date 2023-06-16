@@ -22,32 +22,62 @@ const AuthForm = ({ name, displayName }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="username">
-            <small>Username</small>
+    <div className="flex items-center justify-center h-screen">
+      <form
+        onSubmit={handleSubmit}
+        name={name}
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8"
+      >
+        <div className="mb-4">
+          <label
+            htmlFor="username"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Username
           </label>
-          <input name="username" type="text" />
+          <input
+            name="username"
+            type="text"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
         </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
+        <div className="mb-4">
+          <label
+            htmlFor="password"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Password
           </label>
-          <input name="password" type="password" />
+          <input
+            name="password"
+            type="password"
+            className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
         </div>
         {name === "signup" && (
-          <div>
-            <label htmlFor="email">
-              <small>Email</small>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Email
             </label>
-            <input name="email" type="text" />
+            <input
+              name="email"
+              type="text"
+              className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
           </div>
         )}
-        <div>
-          <button type="submit">{displayName}</button>
+        <div className="flex items-center justify-center">
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            {displayName}
+          </button>
         </div>
-        {error && <div> {error} </div>}
+        {error && <div className="text-red-500">{error}</div>}
       </form>
     </div>
   );
