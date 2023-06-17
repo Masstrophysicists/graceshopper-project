@@ -13,7 +13,7 @@ router.post("/:userId", async (req, res, next) => {
         status: "created",
       },
       include: OrderItem,
-      include: Item,
+      // include: Item,
     });
     if (order) {
       const existingOrderItem = await OrderItem.findOne({
@@ -21,10 +21,9 @@ router.post("/:userId", async (req, res, next) => {
           orderId: order.id,
           itemId: itemId,
         },
-        where: {
-          include: OrderItem,
-          include: Item,
-        },
+        // where: {
+        //   include: OrderItem,
+        // },
       });
       if (existingOrderItem) {
         existingOrderItem.quantity += quantity;
