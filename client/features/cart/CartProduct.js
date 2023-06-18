@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { me } from "../auth/authSlice";
 
-function CartProduct({ productId, quantity }) {
+function CartProduct({ productId, quantity, setTotal }) {
   const [product, setProduct] = useState({});
   const dispatch = useDispatch();
 
   async function getProduct() {
     const res = await fetch("/api/items/" + productId);
-
-    setProduct(await res.json());
+    const data = await res.json();
+    setTotal((total) => total + data.price * quantity);
+    setProduct(data);
   }
 
   useEffect(() => {
@@ -20,6 +21,7 @@ function CartProduct({ productId, quantity }) {
     await fetch("/api/cart/add/" + productId, {
       headers: { authorization: localStorage.token },
     });
+    setTotal((total) => total + product.price);
     dispatch(me());
   }
 
@@ -27,6 +29,7 @@ function CartProduct({ productId, quantity }) {
     await fetch("/api/cart/remove/" + productId, {
       headers: { authorization: localStorage.token },
     });
+    setTotal((total) => total - product.price);
     dispatch(me());
   }
   return (
@@ -37,9 +40,9 @@ function CartProduct({ productId, quantity }) {
         <p>{product?.description}</p>
         <h3>${product?.price}</h3>
         <div className="cart-item-quantity">
-          <button onClick={increase}>-</button>
+          <button onClick={decrease}>-</button>
           <p>{quantity}</p>
-          <button onClick={decrease}>+</button>
+          <button onClick={increase}>+</button>
         </div>
       </div>
     </div>

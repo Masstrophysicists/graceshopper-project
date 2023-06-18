@@ -69,4 +69,10 @@ router.get("/remove/:id", async (req, res) => {
   return res.send(user);
 });
 
+router.get("/empty", async (req, res) => {
+  const user = req.user;
+  await user.update({ cart: "[]" });
+  res.send(user);
+});
+
 module.exports = router;
