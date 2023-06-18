@@ -3,141 +3,141 @@
   "title": "graceshoppertour",
   "steps": [
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/graceshoppertour.tour",
-      "description": "This is the config file for our Grace Shopper Rout in Code Tour. Please don't modify this without prior approval.",
-      "line": 2
-    },
-    {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "package.json",
       "description": "This is our package.json. Lets go through each portion and make sure we understand what its doing.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "graceshoppertour.tour",
+      "description": "This is the config file for our Grace Shopper Rout in Code Tour. Please don't modify this without prior approval.",
+      "line": 2
+    },
+    {
+      "file": "package.json",
       "description": "This is the name of the project, and incidentally, our database name as well.",
       "line": 2
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "package.json",
       "description": "This is the entry point to our application, located at /client/index.js.",
       "line": 5
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "package.json",
       "description": "This section defines a set of commands that can be exceuted using npm run <script-name>.\n\nThe available scripts are:\nbuild: Runs the \"webpack\" command, which likely builds the project's assets.\n\nbuild:dev: Executes the \"build\" script with additional options. It enables watch mode (--watch) and sets the mode to development (--mode=development).\n\nseed: Executes a Node.js script called \"seed.js\", likely used for seeding the database with initial data.\n\nstart: Launches the application by running the \"server\" file with Node.js.\n\nstart:dev: Combines the \"build:dev\" and \"start-server\" scripts using the ampersand (&) to run them concurrently.\n\nstart:dev:logger: Similar to \"start:dev\", but sets the environment variable LOGGING to true, potentially enabling logging.\n\nstart:dev:seed: Similar to \"start:dev\", but sets the environment variable SEED to true, potentially enabling database seeding during development.\n\nstart-server: Uses \"nodemon\" to monitor changes in files with \".html\", \".js\", and \".scss\" extensions, excluding the \"public\" and \"client\" directories. When changes occur, it automatically restarts the server.\n\ntest: Runs tests using Mocha test framework. It specifies the test files to be executed, requires \"@babel/register\" for ES6 module support, and sets the test environment to \"test\".\n\ntest:dev: Executes the \"test\" script with the watch mode enabled, allowing tests to automatically rerun on file changes.\n\ntest:dev:models: Runs only tests that match the \"model\" pattern using the \"test:dev\" script.\n\ntest:dev:routes: Runs only tests that match the \"route\" pattern using the \"test:dev\" script.",
       "line": 6
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "package.json",
       "description": "These are our dependencies. It lists the production dependencies required by the project. Notable dependencies include:\n\n\"@reduxjs/toolkit\": A package that provides utilities for working with Redux state management.\n\n\"bcrypt\": A library for hashing passwords.\n\n\"compression\": Middleware for Express.js to enable response compression.\n\n\"cors\": Middleware for Express.js to handle Cross-Origin Resource Sharing.\n\n\"dotenv\": Allows loading environment variables from a file.\n\n\"express\": A popular web framework for Node.js.\n\n\"jsonwebtoken\": A library for creating and verifying JSON Web Tokens (JWT).\n\n\"pg\": A PostgreSQL database client for Node.js.\n\n\"react\": A JavaScript library for building user interfaces.\n\n\"react-dom\": Provides the integration between React and the DOM.\n\n\"react-redux\": Official React bindings for Redux.\n\n\"react-router-dom\": Routing library for React applications.\n\n\"sequelize\": An ORM (Object-Relational Mapping) for Node.js. It provides a convenient way to interact with relational databases, including PostgreSQL in this case.\n\n\"tailwindcss\": A utility-first CSS framework that allows for rapid UI development by providing a set of pre-defined styles and utility classes.",
       "line": 22
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/package.json",
+      "file": "package.json",
       "description": "devDependencies: Dev dependencies are tools and libraries that are only required during the development process and not in a production environment. They assist developers in tasks such as building, testing, and debugging the application. Here's a simplified explanation of the dev dependencies mentioned:\n\n\"@babel/core\": The core Babel compiler for transforming JavaScript code.\n\n\"@babel/preset-env\": A Babel preset that enables the use of modern JavaScript features by transpiling them to older versions supported by the target environments.\n\n\"@babel/preset-react\": A Babel preset for transforming JSX syntax used in React components.\n\n\"@babel/register\": Allows running Babel-transpiled code directly from Node.js without explicitly compiling it.\n\n\"autoprefixer\": A PostCSS plugin that adds vendor prefixes to CSS rules to ensure cross-browser compatibility.\n\n\"axios\": A popular HTTP client for making requests from Node.js or the browser.\n\n\"axios-mock-adapter\": A library for mocking Axios requests in tests.\n\n\"babel-loader\": A Webpack loader that enables Babel to transpile JavaScript files during the build process.\n\n\"chai\": A popular assertion library for Node.js and the browser.\n\n\"css-loader\": A Webpack loader that allows importing CSS files into JavaScript modules.\n\n\"esm\": A module loader that enables ECMAScript modules (ESM) syntax in Node.js.\n\n\"mocha\": A JavaScript test framework that provides a simple and flexible way to write tests.\n\n\"nodemon\": A development tool that monitors changes in files and automatically restarts the Node.js server.\n\n\"postcss\": A tool for transforming CSS with JavaScript, including applying Autoprefixer.\n\n\"postcss-loader\": A Webpack loader for processing CSS with PostCSS.\n\n\"redux-logger\": A middleware for Redux that logs actions and state changes to the console for debugging purposes.\n\n\"style-loader\": A Webpack loader that injects CSS styles into the DOM at runtime.\n\n\"supertest\": A library for testing HTTP servers by sending requests and making assertions on the responses.\n\n\"webpack\": A popular module bundler for JavaScript applications.\n\n\"webpack-cli\": The command-line interface for Webpack, allowing interaction with Webpack through the terminal.\n",
       "line": 39
     },
     {
-      "directory": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/node_modules",
+      "directory": "node_modules",
       "description": "You dont need to review this folder, but this is where all the packages are installed. Having them in package.json is not enough, this folder needs to be present and packages need to be installed in order for them to work."
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/.env",
+      "file": ".env",
       "description": "This is where our JWT secret is. This variable represents a secret key used for JSON Web Token (JWT) authentication. JWT is a popular method for securely transmitting information between parties as a JSON object. The \"a_secret\" value in the .env file is the secret key used to sign and verify JWTs in the application.\n\nIt's important to keep the .env file confidential and not share it publicly, as it may contain sensitive information such as API keys, database credentials, or other secrets specific to the application's environment.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/webpack.config.js",
+      "file": "webpack.config.js",
       "description": "This file is pretty low level, but you can just take away that its the configuration file for webpack. This configuration file sets up the bundling process, defining how different types of files should be handled and transformed. It is used to generate a bundled JavaScript file that can be included in the application's HTML file and served to the browser. It's served in bundle.js located at /public/bundle.js.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/public/bundle.js",
+      "file": "public/bundle.js",
       "description": "This is bundle.js, its the output file of the webpack.config.js file. When the webpack is built, this file is populated or updated by traversing the cource code of the project. and then combines it into this single file. As part of the bundling process, the bundler applies transformations to the source code. For example, it can transpile modern JavaScript syntax to an older version supported by the target browsers using Babel. It can also process CSS files and apply loaders like style-loader, css-loader, and postcss-loader to handle CSS imports and transformations.\n\nTheoretically, you can run a website if you have only the bundle.js file, provided that the website is a client-side application. A client-side application is primarily built using JavaScript and runs entirely in the browser without relying on server-side rendering.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/postcss.config.js",
+      "file": "postcss.config.js",
       "description": "This is the configuration file for PostCSS. PostCSS is a tool for transforming CSS with JavaScript. It acts as a post-processor for CSS, allowing you to apply various transformations, optimizations, and enhancements to your CSS code.\n\nThe configuration file is used to define the plugins and settings that should be applied when processing CSS files using PostCSS.\n\n\"autoprefixer\" is a popular plugin that automatically adds vendor prefixes to CSS properties to ensure cross-browser compatibility. In this case, no additional configuration is specified, so it uses default settings. The primary purpose of Autoprefixer is to simplify cross-browser compatibility in CSS development. Different browsers may require different vendor prefixes for CSS properties to ensure proper rendering. Autoprefixer automates the process of adding these prefixes, saving developers from manually writing and managing multiple versions of CSS rules.\n\nPostCSS operates through plugins, which are small JavaScript modules that perform specific transformations on CSS code. These plugins can be chained together to create a customized transformation pipeline for your CSS.\n\n",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/tailwind.config.js",
+      "file": "tailwind.config.js",
       "description": "Tailwind CSS is a popular utility-first CSS framework that provides pre-defined styles and utility classes to streamline UI development and CSS coding.\n\nThe configuration file is used to customize the behavior of Tailwind CSS and define various aspects of the framework.\n\nThe first line /** @type {import('tailwindcss').Config} */ is a special comment that provides type information for the configuration file. It indicates that the configuration should match the Config type exported by the tailwindcss module.\n\nThe content property specifies the files that Tailwind CSS should analyze to extract the CSS classes used in the project. It provides an array of file paths or globs. In this example, it includes the index.html file in the public directory, JavaScript files in the client/app directory, JavaScript files in the client/features directory, and JavaScript files in the server directory.\n\nThe theme property allows you to customize the visual styling of your Tailwind CSS project. In this example, the theme object is empty, indicating that no customizations or extensions to the default theme are defined. However, you can extend or override the default theme by adding properties and values to this object.\n\nThe plugins property specifies any additional plugins that should be used with Tailwind CSS. In this example, the plugins array is empty, indicating that no additional plugins are being used. You can add Tailwind CSS plugins here to extend the framework's functionality or integrate with other tools.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "Welcome to the first file in our structure that we'll be talking about. This is /client/index.js, and it sets up the foundational structure of the e-commerce web app. It connects the Redux store to the React components, wraps the components with routing capabilities, and renders the App component as the entry point of the app. The imported CSS styles are applied to the components, allowing for consistent and visually appealing presentation.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "This code imports the Provider component from the react-redux library. React Redux is a package that integrates Redux state management with React components.\nThe Provider component is a key part of React Redux. It wraps the entire application and provides access to the Redux store to all the components in the app. By using the Provider component, the Redux store becomes accessible to any component within its component tree, allowing components to subscribe to the store, dispatch actions, and access the application state. ",
       "line": 3
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "App Component: The line import App from \"./app/App\"; imports the App component from the ./app/App file. The App component represents the main entry point or root component of the e-commerce web app. It encompasses the overall structure, layout, and navigation of the application.\nThe App component is responsible for rendering other components, handling routing, and managing the overall state and behavior of the app. It may contain navigation menus, headers, footers, and other components that are shared across different pages or views within the e-commerce app.\n\nIn summary, the difference between import store from \"./app/store.js\"; and import App from \"./app/App\"; is that the Provider component from React Redux (import { Provider } from \"react-redux\";) establishes the connection between the Redux store and the React component tree. It allows components to access the store's state and dispatch actions. On the other hand, the App component (import App from \"./app/App\";) represents the main entry point and encompasses the overall structure and behavior of the e-commerce web app, rendering other components and managing routing.",
       "line": 5
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "This is the root element. This code creates the root element by using the createRoot function from 'ReactDOM' and retrieves the dom element with the id of \"app\" by using document.getElementById(\"app\").",
       "line": 9
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/public/index.html",
+      "file": "public/index.html",
       "description": "This is the div element targeted by the root element command in /client/app.js. This file is located in public/index.html.",
       "line": 11
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "This is our render command. When its called, we will render our React components into the DOM in our index.html file.",
       "line": 11
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "Wraps the components inside the Router component to enable routing functionality in the e-commerce app.",
       "line": 12
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "Wraps the components inside the Provider component to provide access to the Redux store throughout the app.\n'store={store}' Passes the Redux store to the Provider component, making it available to all connected components.",
       "line": 13
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/index.js",
+      "file": "client/index.js",
       "description": "<App />: Renders the App component, representing the main entry point of our e-commerce app, located at /client/app/App.js.",
       "line": 14
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/App.js",
+      "file": "client/app/App.js",
       "description": "Welcome to app/App.js. This is the root component of our React app. It sets up the top-level routing and wraps any context providers around our app. Lets go into detail about what this code does.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/App.js",
+      "file": "client/app/App.js",
       "description": "import Navbar from '../features/navbar/Navbar';\nimport AppRoutes from './AppRoutes';\n\nThese import statements import the components from our features folder. The features folder holds all of our components that are rendered on the webpage and this file determines what order theyre are loaded in. \n\nThe AppRoutes component represents the routing configuration of the application. It determines which components should be rendered based on the current URL or route, not affected by the Navbar, which should persistently be rendered.",
       "line": 3
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/App.js",
+      "file": "client/app/App.js",
       "description": "This is our App component, where we actually the Navbar and the Approutes. The Navbar should be persistent, and the AppRoutes have additional components in it that will change the bottom half of the screen when the AppRoute is called. The AppRoutes component contains the routing logic and determines which components should be rendered based on the current route.",
       "line": 6
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "This is the next stop from App.js. This code defines the AppRoutes component responsible for rendering the appropriate routes based on the user's logged-in or logged-out state. It uses React hooks like useSelector and useDispatch to access the Redux store and trigger actions. The useEffect hook is used to dispatch the me() action when the component mounts. The component conditionally renders different sets of routes based on the user's authentication status.\n",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "Here we start with defining our component called \"AppRoutes\"",
       "line": 15
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "useSelector hook to access the Redux state and determine whether the user is logged in (isLoggedIn variable). It checks if the state.auth.me.id exists to determine if the user is logged in or not. The useDispatch hook is used to get the dispatch function to trigger actions.\n\nThe expression state.auth.me.id is accessing a property (id) nested within the me property of the auth slice of the Redux store's state. Let's break it down:\n\nRedux Store: Redux is a state management library for JavaScript applications. It provides a centralized store that holds the application's state, and the state is typically divided into different slices or domains.\n\nState Structure: Within the Redux store, the auth slice represents the state related to authentication. It likely contains information such as the user's authentication status, user details, or tokens.\n\nNested Property: The me property is likely nested within the auth slice. It represents the user's data or user object when they are authenticated.\n\nAccessing Nested Property: To access a property within an object, we can use dot notation (.). In this case, state.auth.me accesses the me property within the auth slice of the Redux store.\n\nOnce state.auth.me is accessed, the id property is further accessed using dot notation. It retrieves the value of the id property from the me object.",
       "line": 16,
       "selection": {
@@ -152,327 +152,327 @@
       }
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "The useDispatch hook is used to get the dispatch function to trigger actions. \n\nWhen you dispatch an action, Redux takes that action object and sends it to the store. The store then passes the action to the reducers, which are responsible for handling the action and updating the state accordingly.",
       "line": 17
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "The component uses the useEffect hook to dispatch the me() action when the component mounts. The me() action is responsible for fetching the user's data or checking if the user is authenticated.\n\nThe useEffect hook takes two arguments: a function (the effect) and an optional dependency array. The effect function is executed after the component renders, and it can contain any code that needs to be executed as a side effect.",
       "line": 19
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "The component returns the JSX code representing the routes. It uses the <Routes> component from react-router-dom to encapsulate the individual <Route> components.",
       "line": 23
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "The component conditionally renders different sets of routes based on the isLoggedIn variable. If the user is logged in, it renders a set of routes related to the logged-in state, including routes for Home, Items, SingleItem, and Order components. If the user is not logged in, it renders a set of routes related to the logged-out state, including routes for AuthForm components for login and signup.",
       "line": 25
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/AppRoutes.js",
+      "file": "client/app/AppRoutes.js",
       "description": "You should really know what exports do, but in this case it exports the AppRoutes component as the default export of the file, allowing other modules to import and use it. We wont cover exports again unless necessary.",
       "line": 53
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/store.js",
+      "file": "client/app/store.js",
       "description": "Welcome to /client/store.js. This code sets up the Redux store using @reduxjs/toolkit, configures the root reducer with the authReducer, adds the logger middleware for logging Redux actions and state changes, and exports the configured store for use in the application. It also exports all named exports from authSlice.js to make them available to other parts of the application that import store.js.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/store.js",
+      "file": "client/app/store.js",
       "description": "Inside the store variable, the configureStore function is called with an object containing two properties:",
       "line": 5
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/store.js",
+      "file": "client/app/store.js",
       "description": "reducer: Specifies the root reducer for the store. In this case, the authReducer is assigned to the auth key, indicating that the authReducer handles the state related to authentication.",
       "line": 6
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/store.js",
+      "file": "client/app/store.js",
       "description": "middleware: Defines the middleware to be used by the store. The getDefaultMiddleware function is called and its result is concatenated with the logger middleware using the concat method. This means that the Redux store will use the default middleware plus the logger middleware for logging actions and state changes.",
       "line": 7
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/app/store.js",
+      "file": "client/app/store.js",
       "description": "This is a special case for exports. We export * syntax to export all named exports from ../features/auth/authSlice. This allows other modules that import store.js to also have access to the named exports from authSlice.js, which could include action creators, selectors, and other related functionality.",
       "line": 11
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "Welcome to the next part of our tour. This is features/auth/authSlice.js. This code demonstrates how to manage authentication-related state using Redux Toolkit, including handling asynchronous actions with thunks and updating the state based on the API responses. Lets dig in.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "This code imports necessary functions and libraries such as createSlice and createAsyncThunk from the @reduxjs/toolkit package and axios for making HTTP requests.",
       "line": 2
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "TOKEN is a constant variable used to store the key name for the authentication token in the local storage.",
       "line": 7
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "Two thunks (me and authenticate) are created using createAsyncThunk. Thunks are functions that can be dispatched and handled by Redux Toolkit. They are used for asynchronous actions.",
       "line": 10
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "This thunk retrieves the user's data (me) by sending a GET request to the /auth/me endpoint. It checks if the authentication token exists in the local storage, and if so, includes it in the request headers. The response data is returned as the payload.",
       "line": 12
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "This thunk handles user authentication, either through sign-up or login. It sends a POST request to the /auth/${method} endpoint based on the method parameter. The method can be either \"signup\" or \"login\". The request payload includes the username and password. If the method is \"signup\", an email is also included. The authentication token is stored in the local storage, and the me thunk is dispatched to fetch the user's data.",
       "line": 34
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "The authSlice is created using createSlice from Redux Toolkit. It defines the initial state, reducers, and extra reducers.",
       "line": 63
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "The name of the slice is set to \"auth\". In a complex Redux application, it's common to have multiple slices representing different parts of the application state. The name property allows you to categorize and identify each slice within the store. In this case, the auth slice represents the authentication-related state.",
       "line": 64
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "initialState: The initialState property specifies the initial state of the authentication slice. In this case, it contains two properties:\n\nme: Represents the authenticated user's data. Initially, it is an empty object {}. When the me thunk is fulfilled, the data retrieved from the server is assigned to this property.\n\nerror: Represents any error that occurs during authentication. It is initially set to null and gets updated when there is an error during the me or authenticate thunks.",
       "line": 65
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "reducers: The reducers property contains a collection of reducer functions. In this case, it includes:\n\nlogout: This reducer handles the logout action. It clears the authentication token from the local storage, resets the me property to an empty object, and sets the error property to null. It allows the application to effectively log out the user and reset the authentication-related state.",
       "line": 69
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "extraReducers: The extraReducers property defines how the state should be updated when the asynchronous actions (thunks) defined in the slice are dispatched. It uses the builder function to add case reducers for different action outcomes:\n\nbuilder.addCase(me.fulfilled, (state, action) => { ... }): This case reducer is triggered when the me thunk is fulfilled (successfully executed). It updates the me property of the state with the payload from the action, which contains the user's data retrieved from the server.\n\nbuilder.addCase(me.rejected, (state, action) => { ... }): This case reducer is triggered when the me thunk is rejected (encountered an error). It updates the error property of the state with the error information from the action.\n\nbuilder.addCase(authenticate.rejected, (state, action) => { ... }): This case reducer is triggered when the authenticate thunk is rejected (encountered an error). It also updates the error property of the state with the error information from the action.",
       "line": 76
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "We will export the logout function for later use.",
       "line": 92
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "This exported reducer is used to handle state updates related to authentication in the Redux store.",
       "line": 97
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "The AuthForm component is responsible for rendering a login or sign-up form, handling form submission, and dispatching the appropriate Redux action (authenticate) to authenticate the user.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "{ authenticate } is technically pulled form app/store.js but its not explicitly coded in it, why? Well because...",
       "line": 3
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/authSlice.js",
+      "file": "client/features/auth/authSlice.js",
       "description": "Because we exported it to the store in our authSlice.js! Moving on...",
       "line": 34
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "In our AuthForm component, we pass two props, name, and displayName. ",
       "line": 11
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "This line says that we're taking the useSelector hook to extract the 'error' property from the 'auth' state in our Redux store.",
       "line": 12
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "We also have a useDispatch hook.",
       "line": 13
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "We then define a handleSubmit function that is called when the form is submitted. \n",
       "line": 15
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "This line prevents the default form submission behavior, which refreshes the page when the form is submitted. Since we use React, we just want to handle the form submission and data processing without triggering a full page refresh.",
       "line": 16
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "The next few lines tell us that we are targeting certain details from the form like name, username, password and email(if available).",
       "line": 17
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "This line has a conditonal \"?\" (ternary) statement. If evt.target.email is true, then the email input field exists and has a value which is assigned to const email. However, if it is false, const email is set to the condition after the \":\" which is null. ",
       "line": 20
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "file": "server/db/models/User.js",
       "description": "This is the first time we're looking at our User model. For now, just understand that we made it so that a User cannot exist without an email, defined by our email property \"allowNull: false\" which means if someone attempts to create an account without an email, our form wont let them. Back to our authForm.js.",
       "line": 17
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "Finally we dispatch our authenticate function, passing an object that contains the extracted form data and formName.",
       "line": 21
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "Here is our .jsx return statement that will be rendered when the component is called. It's basically rendering a form element with input fields for username and password initially. ",
       "line": 24
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "Here, if our 'name' prop is equal to 'signup' it will render an email field. When someone clicks on the SignUp link on our page, this name prop will activate and an email field will appear.",
       "line": 57
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/auth/AuthForm.js",
+      "file": "client/features/auth/AuthForm.js",
       "description": "And finally, we have a submit button that passes a prop 'displayName' That just changes the name of the button from \"Login\", to \"Sign Up\" when someone clicks the link at the top of the page to do either.",
       "line": 73
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "/features/home/Home.js is where users end if they successfully log in. We begin with our necessary dependency imports, and the rest is responsible for rendering the homepage of our app, displaying a welcome message to the user with their username, a heading about the virtual farmer's market, and a button to explore the items available for sale. Clicking the button triggers navigation to the \"/items\" route within the application.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "The beginning of our component.",
       "line": 8
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "We use useSelector hook to extract the 'username' from the Redux store's 'auth' slice. It will display the currently logged in or \"authenticated\" user. ",
       "line": 9
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "We use 'useNavigate' to obtain the navigate function, which allows navigation to different routes when called.\n",
       "line": 10
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "Just to make it a little easier on ourselves, the 'navigateToItems' function is defined, which uses the navigate function to navigate to the \"/items\" route when invoked.",
       "line": 12
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "Our homepage is very basic so far and can be updated in the future, but for now, it just displays some headers and a button.",
       "line": 16
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/home/Home.js",
+      "file": "client/features/home/Home.js",
       "description": "On our button, we set up the route to take us to the 'Items' view, as explained earlier.",
       "line": 22
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "From Home, the User will most likely end up here, on the Items page. This component fetches a list of items from our API and renders them in a grid layout, providing links to view individual item details. It demonstrates the usage of React hooks like useEffect and useState, as well as integration with React Router for navigation. Let's explain.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "We have a new import here, the Link component, which is used for client-side navigation. ",
       "line": 2
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "And we use axios for making HTTP requests like GET, POST, PUT, DELETE.",
       "line": 3
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "We define the function Items, and we dont pass any props in.",
       "line": 5
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "We initialize the component's state using the useState hook. When you call useState([]), you get array with two elements:\nThe first element, items, represents the current state value. In this case, items is initialized as an empty array [].\n\nThe second element, setItems, is a function that allows you to update the state value. By calling setItems(newValue), you can update the value of items to newValue. This function triggers a re-render of the component to reflect the updated state.",
       "line": 6
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "The useEffect hook is used to perform side effects in the component.\nIt is called when the component is mounted (empty dependency array []), so it runs only once.\nThe effect function fetchItems is defined asynchronously.\nWithin fetchItems, an HTTP GET request is made to \"http://localhost:8080/api/items\" using Axios.\nThe response data is then stored in the component's state using the setItems function.\n\nSimply, this is how our app gets the list of items from our database to display on the page.",
       "line": 8
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/Items.js",
+      "file": "client/features/items/Items.js",
       "description": "Here we have our return statement to be rendered. The returned JSX of the Items component renders a container <div> with a heading displaying \"Items for sale!\" Inside the container, a grid layout is created with varying numbers of columns based on the screen size. The grid is populated with items from the items array in the component's state. Each item is rendered within a <div> element that includes a <Link> component wrapping an image and a heading, enabling navigation to individual item pages. The item's data is dynamically populated using the map function.",
       "line": 17
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "Logically, the User will then click on an item from our store and will be brought here to our client/features/items/singleItem.js view.  Overall, this component fetches item details from the server API based on the itemId parameter, displays the item information, and allows the user to add the item to their cart with the \"Add to Cart\" button.",
       "line": 1
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "In our component, we use the useParams hook to extract the itemId parameter from the current route. This way the webpage knows which item to display on the page. ",
       "line": 7
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "The component utilizes the useState hook to declare a state variable named 'item' and its setter function 'setItem'. The initial state is set to 'null'.",
       "line": 8
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "The userId variable is declared using the useSelector hook from react-redux to access the id property of the 'me' object in the Redux store's authSlice.",
       "line": 9
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "This asynchronous function is called when the \"Add to Cart\" button is clicked.\nIt sends a POST request to the server API endpoint /api/orders/${userId} using axios.post().\nThe request body contains an object with itemId and quantity properties.\nIf the request is successful, the response data is logged to the console. Otherwise, the error is logged.\n\nThe request body contains an object with two properties: itemId and quantity.\n\nIf the request is successful (status 200), the response data is logged to the console with the message \"Added to cart: [data]\".\nIf an error occurs during the request, the error is caught in the catch block, and an error message is logged to the console with the message \"Error adding to cart [error]\".",
       "line": 11
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "This useEffect hook is used to fetch the item details from the server when the component mounts or when the itemId changes.\nIt defines an asynchronous function 'fetchItems' that performs an HTTP GET request to the server endpoint /api/items/${itemId} using axios.get(). This fetches the item details like name, description, price.\nThe response data is then used to update the 'item' state using the 'setItem' setter function.\nThe fetchItems function is invoked immediately.\nThe dependency array [itemId] ensures that the effect is re-triggered whenever the itemId parameter changes.",
       "line": 23
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "If the 'item' state is null, indicating that the item details are not yet fetched, the component returns null. Otherwise we go into our rendering return statement",
       "line": 34
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/items/singleItem.js",
+      "file": "client/features/items/singleItem.js",
       "description": "The component renders a container <div>.\nIt includes a heading element displaying \"Single Item View\" and a nested <div> representing the item details.\nThe item name, image, description, and price are displayed within appropriate HTML elements.\nThe \"Add to Cart\" button is rendered with an onClick event listener that triggers the addToCart function.\nThe styling classes are provided using the Tailwind CSS utility classes.",
       "line": 36
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
+      "file": "client/features/order/Order.js",
       "description": "This useSelector hook selects the id property from the auth.me slice of the Redux store. It retrieves the user ID from the store and the authSlice. ",
       "line": 6
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
+      "file": "client/features/order/Order.js",
       "description": "This useState hook sets up a state variable called 'orderItems' with an initial value of an empty array. It will be used to store the fetched order items.",
       "line": 7
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
+      "file": "client/features/order/Order.js",
       "description": "This component has two useEffect hooks that perform side effects:\n\nThe first useEffect hook is triggered whenever the userId changes. It fetches the order items for the specific user by making an HTTP GET request to /api/orders/${userId} using axios. Once the response is received, the fetched data is logged to the console, and the order items are set in the component's state using the setOrderItems function.",
       "line": 9
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
+      "file": "client/features/order/Order.js",
       "description": "The second useEffect hook is triggered whenever the orderItems state variable changes. It logs the current value of orderItems to the console. This can be useful for debugging or observing changes in the order items.",
       "line": 18
     },
     {
-      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
+      "file": "client/features/order/Order.js",
       "description": "\nOur return statement displays a heading \"Your order\".\nIf 'orderItems' is truthy (not null or undefined), it maps over the orderItems array and renders the details of each orderItem.\nEach orderItem is displayed within a <div> element and includes information such as the item's name, image, description, price, quantity, and total price.\nThe key prop is set to 'orderItem.id' to uniquely identify each rendered item.",
       "line": 22
     }
