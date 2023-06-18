@@ -18,7 +18,8 @@ export const me = createAsyncThunk("auth/me", async () => {
           authorization: token,
         },
       });
-      return res.data;
+
+      return { ...res.data, cart: JSON.parse(res.data.cart) };
     } else {
       return {};
     }

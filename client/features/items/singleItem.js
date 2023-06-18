@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { me } from "../auth/authSlice";
 
 const SingleItem = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState(null);
   const userId = useSelector((state) => state.auth.me.id);
-
-  const addToCart = async () => {
-    try {
-      const { data } = await axios.post(`/api/orders/${userId}`, {
-        itemId: 1,
-        quantity: 1,
-      });
-      console.log("Added to cart:", data);
-    } catch (error) {
-      console.log("Error adding to cart", error);
-    }
-  };
+  const dispatch = useDispatch();
+  // const addToCart = async () => {
+  //   try {
+  //     const { data } = await axios.post(`/api/orders/${userId}`, {
+  //       itemId: 1,
+  //       quantity: 1,
+  //     });
+  //     console.log("Added to cart:", data);
+  //   } catch (error) {
+  //     console.log("Error adding to cart", error);
+  //   }
+  // };
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -30,6 +31,13 @@ const SingleItem = () => {
 
     fetchItems();
   }, [itemId]);
+
+  async function addToCart() {
+    await fetch("/api/cart/add/" + itemId, {
+      headers: { authorization: localStorage.token },
+    });
+    dispatch(me());
+  }
 
   if (!item) return null;
 

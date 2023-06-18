@@ -46,6 +46,13 @@ const Navbar = () => {
               </button>
               <button
                 type="button"
+                onClick={() => navigate("/cart")}
+                className="text-white hover:bg-white hover:text-blue-500 px-4 py-2 rounded-full transition-colors duration-200"
+              >
+                Cart
+              </button>
+              <button
+                type="button"
                 onClick={logoutAndRedirectHome}
                 className="text-white hover:bg-red-500 hover:text-white px-4 py-2 rounded-full transition-colors duration-200"
               >

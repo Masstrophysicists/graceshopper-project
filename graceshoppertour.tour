@@ -9,11 +9,6 @@
     },
     {
       "file": "package.json",
-      "description": "This is our package.json. Lets go through each portion and make sure we understand what its doing.",
-      "line": 1
-    },
-    {
-      "file": "package.json",
       "description": "This is the name of the project, and incidentally, our database name as well.",
       "line": 2
     },
@@ -53,7 +48,7 @@
     },
     {
       "file": "public/bundle.js",
-      "description": "This is bundle.js, its the output file of the webpack.config.js file. When the webpack is built, this file is populated or updated by traversing the source code of the project and then combines it into this single file. As part of the bundling process, the bundler applies transformations to the source code. For example, it can transpile modern JavaScript syntax to an older version supported by the target browsers using Babel. It can also process CSS files and apply loaders like style-loader, css-loader, and postcss-loader to handle CSS imports and transformations.\n\nTheoretically, you can run a website if you have only the bundle.js file, provided that the website is a client-side application. A client-side application is primarily built using JavaScript and runs entirely in the browser without relying on server-side rendering.",
+      "description": "This is bundle.js, its the output file of the webpack.config.js file. When the webpack is built, this file is populated or updated by traversing the cource code of the project. and then combines it into this single file. As part of the bundling process, the bundler applies transformations to the source code. For example, it can transpile modern JavaScript syntax to an older version supported by the target browsers using Babel. It can also process CSS files and apply loaders like style-loader, css-loader, and postcss-loader to handle CSS imports and transformations.\n\nTheoretically, you can run a website if you have only the bundle.js file, provided that the website is a client-side application. A client-side application is primarily built using JavaScript and runs entirely in the browser without relying on server-side rendering.",
       "line": 1
     },
     {
