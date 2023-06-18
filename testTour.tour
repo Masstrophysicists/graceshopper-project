@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "testTour",
+  "steps": [
+    {
+      "file": "graceshoppertour.tour",
+      "description": "test 1",
+      "line": 1
+    }
+  ]
+}
