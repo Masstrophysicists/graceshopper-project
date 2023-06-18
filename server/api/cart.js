@@ -7,7 +7,8 @@ const router = new express.Router();
 router.get("/add/:id", async (req, res) => {
   const id = req.params.id;
   const user = req.user;
-  const cart = JSON.parse(user.cart);
+  console.log(user);
+  let cart = JSON.parse(user.cart);
 
   //checking if item exists
   const item = await Item.findByPk(id);
@@ -55,7 +56,10 @@ router.get("/remove/:id", async (req, res) => {
 
   //remove entirely
   if (last) {
-    cart = cart.filter((item) => !item.productId == id);
+    cart = cart.filter((item) => {
+      if (item.productId == id) return false;
+      return true;
+    });
   }
   // cloning our updated cart
   const newCart = JSON.stringify(cart);
