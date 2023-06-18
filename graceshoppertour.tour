@@ -53,7 +53,7 @@
     },
     {
       "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/public/bundle.js",
-      "description": "This is bundle.js, its the output file of the webpack.config.js file. When the webpack is built, this file is populated or updated by traversing the cource code of the project. and then combines it into this single file. As part of the bundling process, the bundler applies transformations to the source code. For example, it can transpile modern JavaScript syntax to an older version supported by the target browsers using Babel. It can also process CSS files and apply loaders like style-loader, css-loader, and postcss-loader to handle CSS imports and transformations.\n\nTheoretically, you can run a website if you have only the bundle.js file, provided that the website is a client-side application. A client-side application is primarily built using JavaScript and runs entirely in the browser without relying on server-side rendering.",
+      "description": "This is bundle.js, its the output file of the webpack.config.js file. When the webpack is built, this file is populated or updated by traversing the source code of the project and then combines it into this single file. As part of the bundling process, the bundler applies transformations to the source code. For example, it can transpile modern JavaScript syntax to an older version supported by the target browsers using Babel. It can also process CSS files and apply loaders like style-loader, css-loader, and postcss-loader to handle CSS imports and transformations.\n\nTheoretically, you can run a website if you have only the bundle.js file, provided that the website is a client-side application. A client-side application is primarily built using JavaScript and runs entirely in the browser without relying on server-side rendering.",
       "line": 1
     },
     {
@@ -475,6 +475,76 @@
       "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/client/features/order/Order.js",
       "description": "\nOur return statement displays a heading \"Your order\".\nIf 'orderItems' is truthy (not null or undefined), it maps over the orderItems array and renders the details of each orderItem.\nEach orderItem is displayed within a <div> element and includes information such as the item's name, image, description, price, quantity, and total price.\nThe key prop is set to 'orderItem.id' to uniquely identify each rendered item.",
       "line": 22
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "Welcome to the first part of our backend review. We'll start with our models and how they're related to each other and used in our application. First off, we have server/db/models/User.js. Lets talk about the imports first.\n\nSequelize is imported and used as an ORM (Object-Relational Mapping) library to interact with the database. It will also import some commands that we'll use to connect our database.\n",
+      "line": 1
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "db is the exported Sequelize instance created in the \"../db\" module, representing the database connection.",
+      "line": 2
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/db.js",
+      "description": "This is that file that is imported into our models. This file establishes the connection to the database using Sequelize and configures it based on the provided environment variables. The exported db instance is then used in other modules, such as defining the models and executing database operations. We'll talk about this later. Back to our models.",
+      "line": 23
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "This is our JSON Web Token library for generating and verifying tokens.",
+      "line": 3
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "The bcrypt library for password hashing, which works in conjunction with our JWT to create secure password handling.",
+      "line": 4
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "Loads environment variables from the \".env\" file, specifically our JWT secret.",
+      "line": 5
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "The variable SALT_ROUNDS is set to 5. The concept of \"salt rounds\" is related to the process of password hashing using the bcrypt library.\n\nWhen storing passwords in a database, its crucial to securely hash them to protect against potential security breaches. Hashing converts the original password into an irreversible string of characters, making it computationally difficult to retrieve the original password from the hash. The bcrypt algorithm will be executed 5 times during the password hashing process.",
+      "line": 7
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "The User model is defined using db.define() method from Sequelize, where \"user\" is the model name.",
+      "line": 8
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "It has properties such as username, email, password, and isAdmin.",
+      "line": 9
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "Some properties use Sequelize.STRING, which are just datatypes provided by Sequelize to define a column in a database. \n\nSequelize data types provides a layer of abstraction and convenience when working with databases in Sequelize. It helps maintain consistency, simplifies cross-database compatibility, enables data type validation, and facilitates automated migrations when comparted to regular datatypes in JavaScript.",
+      "line": 10
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "correctPassword() method compares a candidate password with the user's hashed password using bcrypt's compare() method.",
+      "line": 36
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "The generateToken() method is added to the prototype of the User model. This means it will be available to all instances of the User model.\n\nWhen called, it generates a JWT using the jwt.sign() method provided by the jsonwebtoken library.\n\nInside the jwt.sign() method, an object is passed as the payload. In this case, the payload contains the id property of the user object (this.id). The id is used to uniquely identify the user.\n\nThe second argument to jwt.sign() is the secret key used to sign the token. In this code snippet, process.env.JWT is used, which implies that the secret key is stored in the environment variable JWT in the .env file.\n\nOnce the token is generated, it is returned by the generateToken() method.",
+      "line": 41
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "User.authenticate() attempts to authenticate a user by finding their record in the database based on the provided username. It then verifies the password using bcrypt's compare() method. If the user is not found or the password is incorrect, it throws an error. Otherwise, it generates a token for the authenticated user using generateToken() and returns it.",
+      "line": 48
+    },
+    {
+      "file": "Fullstack Academy/FullStack JavaScript/Senior Phase/graceshopper-project/server/db/models/User.js",
+      "description": "findByToken() verifies the provided JWT token using jwt.verify(). If the verification is successful, it retrieves the user record from the database based on the extracted user ID. If the user is found, it returns the user object. Otherwise, it throws an error.",
+      "line": 58
     }
   ]
 }
