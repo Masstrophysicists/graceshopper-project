@@ -7,7 +7,18 @@ module.exports = {
     "./server/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        "slide-in": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        "slide-in": "slide-in 600s linear infinite",
+      },
+    },
   },
+  variants: {},
   plugins: [],
 };
