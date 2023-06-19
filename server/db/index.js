@@ -10,6 +10,8 @@ const Order = require("./models/Order");
 
 const OrderItem = require("./models/OrderItem");
 
+const Cart = require("./models/Cart");
+
 //associations could go here!
 User.hasMany(Order);
 Order.belongsTo(User);
@@ -27,5 +29,6 @@ module.exports = {
     Item,
     Order,
     OrderItem,
+    Cart,
   },
 };
