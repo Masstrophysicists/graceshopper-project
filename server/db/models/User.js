@@ -26,10 +26,6 @@ const User = db.define("user", {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
-  cart: {
-    type: Sequelize.STRING,
-    defaultValue: "[]",
-  },
 });
 
 module.exports = User;
