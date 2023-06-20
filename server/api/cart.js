@@ -28,6 +28,9 @@ router.get("/add/:id", async (req, res) => {
   if (orderItem) {
     await OrderItem.increment(
       { quantity: 1 },
+      { where: { cartId: cart.id, itemId: id } }
+    );
+    await OrderItem.increment(
       { totalPrice: item.price },
       { where: { cartId: cart.id, itemId: id } }
     );
@@ -48,40 +51,47 @@ router.get("/add/:id", async (req, res) => {
 router.get("/remove/:id", async (req, res) => {
   const id = req.params.id;
   const user = req.user;
-  let cart = JSON.parse(user.cart);
-
-  //reduce quantity
-  let last = false;
-  cart = cart.map((item) => {
-    if (item.productId == id) {
-      if (item.quantity > 1)
-        return { productId: id, quantity: --item.quantity };
-      else {
-        last = true;
-        return item;
-      }
-    }
-    return item;
+  const item = await Item.findByPk(id);
+  let cart = await Cart.findOne({
+    where: { status: "created", userId: user.id },
   });
 
-  //remove entirely
-  if (last) {
-    cart = cart.filter((item) => {
-      if (item.productId == id) return false;
-      return true;
-    });
+  //reduce quantity and/or remove entirely if quantity becomes 0
+  let orderItem = await OrderItem.findOne({
+    where: { cartId: cart.id, itemId: id },
+  });
+  if (orderItem) {
+    if (orderItem.quantity === 1) {
+      await OrderItem.destroy({
+        where: {
+          cartId: cart.id,
+          itemId: id,
+        },
+      });
+    } else {
+      await OrderItem.decrement(
+        { quantity: 1 },
+        { where: { cartId: cart.id, itemId: id } }
+      );
+      await OrderItem.decrement(
+        { totalPrice: item.price },
+        { where: { cartId: cart.id, itemId: id } }
+      );
+    }
   }
-  // cloning our updated cart
-  const newCart = JSON.stringify(cart);
-  //updating the user
-  await user.update({ cart: newCart });
 
-  return res.send(user);
+  res.send(user);
 });
 
 router.get("/empty", async (req, res) => {
   const user = req.user;
-  await user.update({ cart: "[]" });
+  await Cart.update(
+    { status: "completed" },
+    {
+      where: { status: "created", userId: user.id },
+    }
+  );
+
   res.send(user);
 });
 
