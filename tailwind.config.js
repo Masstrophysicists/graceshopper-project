@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./public/index.html",
@@ -7,7 +6,21 @@ module.exports = {
     "./server/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        "slide-and-bounce": {
+          "0%": { transform: "translate(-100%, -10%)" },
+          "25%": { transform: "translate(-50%, 10%)" },
+          "50%": { transform: "translate(0, -10%)" },
+          "75%": { transform: "translate(50%, 10%)" },
+          "100%": { transform: "translate(100%, -10%)" },
+        },
+      },
+      animation: {
+        "slide-and-bounce": "slide-and-bounce 300s ease-in-out infinite",
+      },
+    },
+    variants: {},
+    plugins: [],
   },
-  plugins: [],
 };

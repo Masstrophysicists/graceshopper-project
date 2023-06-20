@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-blue-500 text-white drop-shadow-2xl py-6">
+    <header className="bg-blue-500 text-white drop-shadow-2xl py-6 z-10">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-bold mb-2 text-shadow">
           Stardew Valley Store -Online-

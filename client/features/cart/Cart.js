@@ -25,24 +25,36 @@ function Cart() {
     //   });
     // });
   }
+
   return (
-    <div className="cart">
-      <h2>Cart</h2>
-      <div className="cart-items">
+    <div className="cart container mx-auto mt-8">
+      <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+        Cart
+      </h2>
+      <div className="cart-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {cart.map((item) => (
           <CartProduct
+            key={item.productId}
             productId={item.productId}
             quantity={item.quantity}
             setTotal={setTotal}
           />
         ))}
       </div>
-      <div className="cart-info">
-        <PaymentInfo />
-        <div className="cart-total">Total: ${total}</div>
-        <button onClick={createOrders}>Checkout</button>
+      <PaymentInfo />
+      <div className="cart-info flex justify-between items-center mt-8 mb-8">
+        <div className="cart-total text-2xl font-bold text-gray-800">
+          Total: ${total}
+        </div>
+        <button
+          onClick={createOrders}
+          className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200"
+        >
+          Checkout
+        </button>
       </div>
     </div>
   );
 }
+
 export default Cart;

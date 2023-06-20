@@ -7,19 +7,9 @@ import { me } from "../auth/authSlice";
 const SingleItem = () => {
   const { itemId } = useParams();
   const [item, setItem] = useState(null);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
   const userId = useSelector((state) => state.auth.me.id);
   const dispatch = useDispatch();
-  // const addToCart = async () => {
-  //   try {
-  //     const { data } = await axios.post(`/api/orders/${userId}`, {
-  //       itemId: 1,
-  //       quantity: 1,
-  //     });
-  //     console.log("Added to cart:", data);
-  //   } catch (error) {
-  //     console.log("Error adding to cart", error);
-  //   }
-  // };
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -37,6 +27,11 @@ const SingleItem = () => {
       headers: { authorization: localStorage.token },
     });
     dispatch(me());
+    setIsAddedToCart(true);
+
+    setTimeout(() => {
+      setIsAddedToCart(false);
+    }, 3000);
   }
 
   if (!item) return null;
@@ -61,6 +56,9 @@ const SingleItem = () => {
         >
           Add to Cart
         </button>
+        {isAddedToCart && (
+          <p className="text-green-500 mt-4">Item added to cart!</p>
+        )}
       </div>
     </div>
   );

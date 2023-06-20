@@ -22,11 +22,11 @@ const AuthForm = ({ name, displayName }) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen mt-[-10%]">
+    <div className="flex items-start justify-center h-screen z-10 mt-40">
       <form
         onSubmit={handleSubmit}
         name={name}
-        className="bg-white shadow-md rounded px-12 pt-10 pb-12"
+        className="bg-white shadow-md rounded px-12 pb-12"
       >
         <div className="mb-6">
           <label

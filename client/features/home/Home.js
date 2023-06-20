@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen mt-[-10%]">
+    <div className="flex flex-col items-center justify-start h-screen z-0 mt-40">
       <h3 className="text-3xl text-gray-500 mb-5">Welcome, {username}!</h3>
       <h1 className="text-5xl font-bold text-gray-800 mb-10">
         Discover the Charm of Our Virtual Farmer's Market
