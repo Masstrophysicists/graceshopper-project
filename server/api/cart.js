@@ -1,5 +1,5 @@
 const {
-  models: { User, Item },
+  models: { User, Item, Cart, OrderItem },
 } = require("../db");
 const express = require("express");
 const router = new express.Router();
@@ -7,30 +7,40 @@ const router = new express.Router();
 router.get("/add/:id", async (req, res) => {
   const id = req.params.id;
   const user = req.user;
-  console.log(user);
-  let cart = JSON.parse(user.cart);
+  console.log("this is the user id........", user.id);
+
+  //checking if cart exists and if not then creating one
+  let cart = await Cart.findOne({
+    where: { status: "created", userId: user.id },
+  });
+  if (!cart) {
+    cart = await Cart.create({ status: "created", userId: user.id });
+  }
 
   //checking if item exists
   const item = await Item.findByPk(id);
   if (!item) return res.status(404).send("item doesn't exist");
 
   //checking if the product is already in the cart and increasing the quantity if so
-  let copy = false;
-  cart.forEach((item, index) => {
-    if (item.productId == id) {
-      copy = true;
-      cart[index].quantity++;
-      return;
-    }
+  let orderItem = await OrderItem.findOne({
+    where: { cartId: cart.id, itemId: id },
   });
-  // if it doesnt exist , putting  new object
-  if (!copy) {
-    cart.push({ productId: id, quantity: 1 });
+  if (orderItem) {
+    await OrderItem.increment(
+      { quantity: 1 },
+      { totalPrice: item.price },
+      { where: { cartId: cart.id, itemId: id } }
+    );
   }
-  // cloning our updated cart
-  const newCart = JSON.stringify(cart);
-  //updating the user
-  await user.update({ cart: newCart });
+
+  // if it doesnt exist , putting  new object
+  if (!orderItem) {
+    await OrderItem.create({
+      totalPrice: item.price,
+      cartId: cart.id,
+      itemId: id,
+    });
+  }
 
   return res.send(user);
 });
