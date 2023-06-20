@@ -1,8 +1,19 @@
 const router = require("express").Router();
 const {
-  models: { Item },
+  models: { Item, User },
 } = require("../db");
 module.exports = router;
+
+async function requireToken(req, res, next) {
+  try {
+    const token = req.headers.authorization;
+    const user = await User.findByToken(token);
+    req.user = user;
+    next();
+  } catch (error) {
+    next(error);
+  }
+}
 
 router.get("/", async (req, res, next) => {
   try {
@@ -26,13 +37,16 @@ router.get("/:itemId", async (req, res, next) => {
   }
 });
 
+// this is the function to check is the user isAdmin or is a user at all.
 async function requireAdmin(req, res, next) {
   if (!req.user || !req.user.isAdmin) {
-    return res.sendStatus(403).send("You shall not pass!");
+    return res.status(403).send("You shall not pass!");
   }
+  next();
 }
 
-router.post("/", requireAdmin, async (req, res, next) => {
+// this route helps add items into our items page
+router.post("/", requireToken, requireAdmin, async (req, res, next) => {
   try {
     const item = await Item.create(req.body);
     res.json(item);
@@ -41,6 +55,7 @@ router.post("/", requireAdmin, async (req, res, next) => {
   }
 });
 
+// this helps us edit items
 router.put("/:itemId", requireAdmin, async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.itemId);
@@ -52,6 +67,7 @@ router.put("/:itemId", requireAdmin, async (req, res, next) => {
   }
 });
 
+// this helps us delete items.
 router.delete("/:itemId", requireAdmin, async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.itemId);
