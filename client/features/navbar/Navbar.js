@@ -5,6 +5,7 @@ import { logout } from "../../app/store";
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  const isAdmin = useSelector((state) => state.auth.me.isAdmin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const logoutAndRedirectHome = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <header className="bg-blue-500 text-white drop-shadow-2xl py-6 z-10">
       <div className="container mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-2 text-shadow">
+        <h1 className="font-bold mb-2 text-shadow text-4xl">
           Stardew Valley Store -Online-
         </h1>
         <h2 className="text-3xl font-semibold mb-5 text-shadow animate-bounce">
@@ -58,6 +59,15 @@ const Navbar = () => {
               >
                 Logout
               </button>
+              {isLoggedIn && isAdmin && (
+                <button
+                  type="button"
+                  onClick={() => navigate("/admin")}
+                  className="text-white hover:bg-red-500 hover:text-white px-4 py-2 rounded-full transition-colors duration-200"
+                >
+                  Admin
+                </button>
+              )}
             </div>
           ) : (
             <div className="flex justify-center space-x-8 mb-4">

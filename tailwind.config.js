@@ -17,7 +17,7 @@ module.exports = {
         },
       },
       animation: {
-        "slide-and-bounce": "slide-and-bounce 300s ease-in-out infinite",
+        "slide-and-bounce": "slide-and-bounce 240s ease-in-out infinite",
       },
     },
     variants: {},

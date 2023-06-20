@@ -8,7 +8,7 @@ const App = () => {
     <div className="relative overflow-hidden">
       <img
         src={cloudsImage}
-        className="absolute left-1/2 transform -translate-x-[-100%] pointer-events-none animate-slide-and-bounce -z-10"
+        className="absolute left transform -translate-x-[-100%] pointer-events-none animate-slide-and-bounce -z-10"
         alt="Clouds"
       />
       <div className="min-h-screen relative z-10">
