@@ -7,7 +7,7 @@ const Items = () => {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const response = await axios.get("http://localhost:8080/api/items");
+      const response = await axios.get("api/items");
       setItems(response.data);
     };
 

@@ -42,13 +42,13 @@ const Navbar = () => {
               >
                 Items
               </button>
-              <button
+              {/* <button
                 type="button"
                 onClick={() => navigate("/orders")}
                 className="text-white hover:bg-white hover:text-blue-500 px-4 py-2 rounded-full transition-colors duration-200"
               >
                 Orders
-              </button>
+              </button> */}
               <button
                 type="button"
                 onClick={() => navigate("/cart")}
