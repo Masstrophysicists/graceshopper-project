@@ -4,10 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import PaymentInfo from "./PaymentInfo";
 import { me } from "../auth/authSlice";
 import axios from "axios";
+// import { useParams } from "react-router-dom";
 
 function Cart() {
   const user = useSelector((state) => state.auth.me);
-
+  const userId = user.id;
+  // const { userId } = useParams();
   const [total, setTotal] = useState(0);
   const [cartItems, setCartItems] = useState([]);
 
@@ -15,13 +17,15 @@ function Cart() {
 
   useEffect(() => {
     const fetchCartItems = async () => {
-      const response = await axios.get("http://localhost:8080/api/cart");
+      const response = await axios.get(
+        `http://localhost:8080/api/cart/${userId}`
+      );
       setCartItems(response.data);
       console.log("looky here", response.data);
     };
 
     fetchCartItems();
-  }, []);
+  }, [userId]);
 
   console.log("THIS IS OUR USER:", user);
   console.log("THIS IS OUR CART SO FAAAR:", cartItems);
@@ -40,8 +44,8 @@ function Cart() {
       <div className="cart-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {cartItems.map((item) => (
           <CartProduct
-            key={item.productId}
-            productId={item.productId}
+            key={item.itemId}
+            productId={item.itemId}
             quantity={item.quantity}
             setTotal={setTotal}
           />

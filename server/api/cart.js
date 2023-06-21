@@ -3,25 +3,21 @@ const {
 } = require("../db");
 const express = require("express");
 const router = new express.Router();
+module.exports = router;
 
-router.get("/", async (req, res) => {
-  const user = req.user;
-  console.log("this is the user id........", user);
+router.get("/:userId", async (req, res) => {
+  const id = req.params.userId;
+  console.log("this is the req bodyyyy........", id);
 
-  const cartItems = await OrderItem.findAll();
+  let cart = await Cart.findOne({
+    where: { status: "created", userId: id },
+  });
+  let cartItems = await OrderItem.findAll({
+    where: { cartId: cart.id },
+  });
 
   res.send(cartItems);
-  // let cart = await Cart.findOne({
-  //   where: { status: "created", userId: user.id },
-  // });
-  // let cartItems = await OrderItem.findAll({
-  //   where: { cartId: cart.id },
-  // });
-
-  // res.json(cartItems);
 });
-
-module.exports = router;
 
 router.get("/add/:id", async (req, res) => {
   const id = req.params.id;
