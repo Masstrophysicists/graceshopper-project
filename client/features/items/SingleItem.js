@@ -24,7 +24,7 @@ const SingleItem = () => {
 
   const fetchItem = async () => {
     const response = await axios.get(
-      `http://localhost:8080/api/items/${itemId}`
+      `api/items/${itemId}`
     );
     setItem(response.data);
     setItem(response.data);
