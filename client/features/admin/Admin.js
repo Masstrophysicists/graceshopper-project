@@ -7,6 +7,7 @@ const Admin = () => {
   const [itemPrice, setItemPrice] = useState("");
   const [itemDescription, setItemDescription] = useState("");
   const [itemImage, setItemImage] = useState("");
+  const [notification, setNotification] = useState("");
   const token = window.localStorage.getItem("token");
 
   const handleSubmit = async (event) => {
@@ -24,12 +25,16 @@ const Admin = () => {
           authorization: token,
         },
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         setItemName("");
         setItemPrice("");
         setItemDescription("");
         setItemImage("");
-        alert("Item added successfully!");
+        setNotification("Item added successfully!");
+
+        setTimeout(() => {
+          setNotification("");
+        }, 4000);
       }
     } catch (error) {
       console.error("Error adding item:", error);
@@ -59,25 +64,27 @@ const Admin = () => {
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
           Admin
         </h1>
-        <ul className="space-y-4">
-          {users.map((user) => (
-            <li
-              key={user.id}
-              className="bg-white shadow-lg rounded-lg p-4 space-y-2"
-            >
-              <p className="text-lg font-bold text-gray-800">
-                Username: {user.username}
-              </p>
-              <p className="text-gray-700">Email: {user.email}</p>
-              <p className="text-gray-700">
-                Admin: {user.isAdmin ? "Yes" : "No"}
-              </p>
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-center">
+          <ul className="space-y-4 px-10 w-1/2 min-w-2/3">
+            {users.map((user) => (
+              <li
+                key={user.id}
+                className="bg-white shadow-lg rounded-lg p-4 space-y-2"
+              >
+                <p className="text-lg font-bold text-gray-800">
+                  Username: {user.username}
+                </p>
+                <p className="text-gray-700">Email: {user.email}</p>
+                <p className="text-gray-700">
+                  Admin: {user.isAdmin ? "Yes" : "No"}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="mt-10">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="mt-10 flex justify-center">
+        <form onSubmit={handleSubmit} className="space-y-4 px-10 max-w-md">
           <h2 className="text-2xl font-bold">Add New Item</h2>
           <div>
             <label htmlFor="itemName" className="font-bold">
@@ -133,6 +140,9 @@ const Admin = () => {
           >
             Add Item
           </button>
+          {notification && (
+            <div className="text-green-600 mt-2">{notification}</div>
+          )}
         </form>
       </div>
     </div>
