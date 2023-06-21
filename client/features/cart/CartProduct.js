@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { me } from "../auth/authSlice";
 
-function CartProduct({ productId, quantity, setTotal }) {
+function CartProduct({ productId, quantity: initQuantity, setTotal }) {
   const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(initQuantity);
   const dispatch = useDispatch();
 
   async function getProduct() {
@@ -22,6 +23,7 @@ function CartProduct({ productId, quantity, setTotal }) {
       headers: { authorization: localStorage.token },
     });
     setTotal((total) => total + product.price);
+    setQuantity((prevQuantity) => quantity + 1);
     dispatch(me());
   }
 
@@ -30,6 +32,7 @@ function CartProduct({ productId, quantity, setTotal }) {
       headers: { authorization: localStorage.token },
     });
     setTotal((total) => total - product.price);
+    setQuantity((prevQuantity) => quantity - 1);
     dispatch(me());
   }
 

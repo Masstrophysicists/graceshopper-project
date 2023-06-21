@@ -11,6 +11,7 @@ function Cart() {
   const userId = user.id;
   // const { userId } = useParams();
   const [total, setTotal] = useState(0);
+
   const [cartItems, setCartItems] = useState([]);
 
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function Cart() {
     };
 
     fetchCartItems();
-  }, [userId]);
+  }, [userId, user]);
 
   console.log("THIS IS OUR USER:", user);
   console.log("THIS IS OUR CART SO FAAAR:", cartItems);
