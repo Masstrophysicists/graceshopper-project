@@ -37,7 +37,7 @@ function Cart() {
       <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">
         Cart
       </h2>
-      {/* <div className="cart-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="cart-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {cartItems.map((item) => (
           <CartProduct
             key={item.productId}
@@ -58,7 +58,7 @@ function Cart() {
         >
           Checkout
         </button>
-      </div> */}
+      </div>
     </div>
   );
 }
