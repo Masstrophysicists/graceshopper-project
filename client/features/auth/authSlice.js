@@ -19,6 +19,7 @@ export const me = createAsyncThunk("auth/me", async () => {
         },
       });
 
+      console.log("res.data.cart:", res.data.cart);
       return { ...res.data, cart: JSON.parse(res.data.cart) };
     } else {
       return {};
@@ -74,12 +75,16 @@ export const authSlice = createSlice({
       state.error = null;
     },
   },
+
   extraReducers: (builder) => {
     builder.addCase(me.fulfilled, (state, action) => {
       state.me = action.payload;
     });
     builder.addCase(me.rejected, (state, action) => {
       state.error = action.error;
+    });
+    builder.addCase(authenticate.fulfilled, (state, action) => {
+      state.me = action.payload;
     });
     builder.addCase(authenticate.rejected, (state, action) => {
       state.error = action.payload;
@@ -90,6 +95,7 @@ export const authSlice = createSlice({
 /*
   ACTIONS
 */
+
 export const { logout } = authSlice.actions;
 
 /*

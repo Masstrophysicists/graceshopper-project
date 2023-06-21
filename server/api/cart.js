@@ -4,6 +4,28 @@ const {
 const express = require("express");
 const router = new express.Router();
 
+router.get("/cart", async (req, res) => {
+  try {
+    const user = req.user;
+    const cart = await Cart.findOne({
+      where: { status: "created", userId: user.id },
+      include: [
+        {
+          model: OrderItem,
+          include: Item,
+        },
+      ],
+    });
+
+    res.json(cart);
+  } catch (error) {
+    console.error("Error retrieving cart:", error);
+    res.status(500).json({ error: "Failed to retrieve cart" });
+  }
+});
+
+module.exports = router;
+
 router.get("/add/:id", async (req, res) => {
   const id = req.params.id;
   const user = req.user;

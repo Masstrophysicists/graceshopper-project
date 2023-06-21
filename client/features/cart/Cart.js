@@ -3,27 +3,20 @@ import CartProduct from "./CartProduct";
 import { useSelector, useDispatch } from "react-redux";
 import PaymentInfo from "./PaymentInfo";
 import { me } from "../auth/authSlice";
+
 function Cart() {
   const user = useSelector((state) => state.auth.me);
   const cart = user.cart;
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
 
+  console.log("THIS IS OUR USER:", user);
+  console.log("THIS IS OUR CART SO FAAAR:", cart);
+
   async function createOrders() {
     fetch("/api/cart/empty", {
       headers: { authorization: localStorage.token },
     }).then(dispatch(me()));
-    // cart.forEach((product) => {
-
-    //   fetch("/api/orders/" + user.id, {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       itemId: product.productId,
-    //       quantity: product.quantity,
-    //     }),
-    //     headers: { "Content-Type": "application/json" },
-    //   });
-    // });
   }
 
   return (

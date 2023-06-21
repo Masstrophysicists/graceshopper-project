@@ -7,6 +7,7 @@ const Admin = () => {
   const [itemPrice, setItemPrice] = useState("");
   const [itemDescription, setItemDescription] = useState("");
   const [itemImage, setItemImage] = useState("");
+  const token = window.localStorage.getItem("token");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +20,9 @@ const Admin = () => {
       };
 
       const response = await axios.post("/api/items", newItem, {
-        headers: { authorization: `Bearer ${token}` },
+        headers: {
+          authorization: token,
+        },
       });
       if (response.status === 201) {
         setItemName("");

@@ -11,8 +11,12 @@ const OrderItem = require("./models/OrderItem");
 const Cart = require("./models/Cart");
 
 //associations could go here!
-User.hasMany(Cart);
-Cart.belongsTo(User);
+User.hasMany(Cart, {
+  foreignKey: "userId",
+});
+Cart.belongsTo(User, {
+  foreignKey: "userId",
+});
 
 Cart.hasMany(OrderItem);
 OrderItem.belongsTo(Cart);

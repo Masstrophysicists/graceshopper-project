@@ -5,7 +5,7 @@ import AuthForm from "../features/auth/AuthForm";
 import Home from "../features/home/Home";
 import Items from "../features/items/Items";
 import { me } from "./store";
-import SingleItem from "../features/items/singleItem";
+import SingleItem from "../features/items/SingleItem";
 import Cart from "../features/cart/Cart";
 import Admin from "../features/admin/Admin";
 
@@ -14,8 +14,13 @@ import Admin from "../features/admin/Admin";
  */
 
 const AppRoutes = () => {
-  const isLoggedIn = useSelector((state) => !!state.auth.me.id);
-  const isAdmin = useSelector((state) => state.auth.me.isAdmin);
+  const isLoggedIn = useSelector(
+    (state) => state.auth.me && !!state.auth.me.id
+  );
+  const isAdmin = useSelector(
+    (state) => state.auth.me && state.auth.me.isAdmin
+  );
+
   const dispatch = useDispatch();
 
   useEffect(() => {

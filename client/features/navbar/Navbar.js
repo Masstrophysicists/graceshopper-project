@@ -4,8 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../app/store";
 
 const Navbar = () => {
-  const isLoggedIn = useSelector((state) => !!state.auth.me.id);
-  const isAdmin = useSelector((state) => state.auth.me.isAdmin);
+  const isLoggedIn = useSelector(
+    (state) => state.auth.me && !!state.auth.me.id
+  );
+  const isAdmin = useSelector(
+    (state) => state.auth.me && state.auth.me.isAdmin
+  );
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const logoutAndRedirectHome = () => {
