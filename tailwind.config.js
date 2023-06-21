@@ -6,6 +6,10 @@ module.exports = {
     "./server/**/*.js",
   ],
   theme: {
+    minWidth: {
+      "1/2": "50%",
+      "2/3": "66%",
+    },
     extend: {
       keyframes: {
         "slide-and-bounce": {

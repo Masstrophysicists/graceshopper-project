@@ -31,7 +31,7 @@ const AuthForm = ({ name, displayName }) => {
         <div className="mb-6">
           <label
             htmlFor="username"
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 text-sm font-bold mb-2 mt-8"
           >
             Username
           </label>

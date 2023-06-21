@@ -90,9 +90,9 @@ const SingleItem = () => {
   if (!item) return null;
 
   return (
-    <div className="container mx-auto mt-8 mb-48">
+    <div className="container mx-auto mt-8 mb-48 px-28 max-w-2xl">
       <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-        Single Item View
+        Item Details
       </h1>
       <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">{item.name}</h1>

@@ -19,16 +19,16 @@ const Navbar = () => {
 
   return (
     <header className="bg-blue-500 text-white drop-shadow-2xl py-6 z-10">
-      <div className="container mx-auto text-center">
-        <h1 className="font-bold mb-2 text-shadow text-4xl">
-          Stardew Valley Store -Online-
+      <div className="container mx-auto px-6 sm:px-0 text-center">
+        <h1 className="font-bold mb-2 text-shadow text-4xl whitespace-nowrap">
+          Stardew Valley Store <p className="whitespace-normal">-Online-</p>
         </h1>
         <h2 className="text-3xl font-semibold mb-5 text-shadow animate-bounce">
           Plant Seeds, Harvest Joy!
         </h2>
         <nav>
           {isLoggedIn ? (
-            <div className="flex justify-center space-x-8 mb-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-4">
               <Link
                 to="/home"
                 className="text-white hover:bg-white hover:text-blue-500 px-4 py-2 rounded-full transition-colors duration-200"
