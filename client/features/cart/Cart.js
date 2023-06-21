@@ -31,9 +31,10 @@ function Cart() {
   console.log("THIS IS OUR CART SO FAAAR:", cartItems);
 
   async function createOrders() {
-    fetch("/api/cart/empty", {
+    fetch(`http://localhost:8080/api/cart/empty/${userId}`, {
       headers: { authorization: localStorage.token },
     }).then(dispatch(me()));
+    setCartItems([]);
   }
 
   return (
