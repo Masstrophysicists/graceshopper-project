@@ -30,7 +30,7 @@ const Admin = () => {
         setItemPrice("");
         setItemDescription("");
         setItemImage("");
-        setNotification("Item added successfully!");
+        setNotification("Item added!");
 
         setTimeout(() => {
           setNotification("");
@@ -61,15 +61,15 @@ const Admin = () => {
   return (
     <div className="container mx-auto mt-8 mb-48">
       <div>
-        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+        <h1 className="text-4xl font-bold text-white text-shadow mb-8 text-center">
           Admin
         </h1>
-        <div className="flex justify-center">
-          <ul className="space-y-4 px-10 w-1/2 min-w-2/3">
+        <div className="flex justify-center items-center w-full">
+          <ul className="space-y-4 px-10 min-w-2/3">
             {users.map((user) => (
               <li
                 key={user.id}
-                className="bg-white shadow-lg rounded-lg p-4 space-y-2"
+                className="bg-white shadow-lg rounded-lg p-4 space-y-2 max-w-md mx-auto"
               >
                 <p className="text-lg font-bold text-gray-800">
                   Username: {user.username}
@@ -134,15 +134,19 @@ const Admin = () => {
               className="border border-gray-300 p-2 rounded-md w-full"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200"
-          >
-            Add Item
-          </button>
-          {notification && (
-            <div className="text-green-600 mt-2">{notification}</div>
-          )}
+          <div className="flex items-center justify-between mt-8 mb-8">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200"
+            >
+              Add Item
+            </button>
+            {notification && (
+              <div className=" text-green-600 font-bold text-xl">
+                {notification}
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </div>

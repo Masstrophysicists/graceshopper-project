@@ -14,9 +14,13 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start h-screen z-0 mt-40">
-      <h3 className="text-3xl text-gray-500 mb-5">Welcome, {username}!</h3>
-      <h1 className="text-5xl font-bold text-center text-gray-800 mb-10 px-10">
+    <div className="flex flex-col items-center justify-start h-[42rem] z-0 mt-56 ">
+      <h3 className="text-3xl text-white mb-5">
+        Welcome,{" "}
+        <span className="text-white font-bold text-shadow">{username}!</span>
+      </h3>
+      <h1 className="text-5xl font-bold text-center text-shadow text-white mb-10 px-10">
+        {/* Make the text white */}
         Discover the Charm of Our Virtual Farmer's Market
       </h1>
       <div

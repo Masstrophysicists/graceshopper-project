@@ -89,7 +89,7 @@ const SingleItem = () => {
 
   return (
     <div className="container mx-auto mt-8 mb-48 px-28 max-w-2xl">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+      <h1 className="text-4xl font-bold text-center text-shadow text-white mb-10 px-10">
         Item Details
       </h1>
       <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center">
@@ -107,17 +107,21 @@ const SingleItem = () => {
         >
           Add to Cart
         </button>
-        {addToCartMessage && (
-          <p className="text-green-500 mt-4">{addToCartMessage}</p>
-        )}
+        <p
+          className={`font-bold mt-4 ${
+            addToCartMessage ? "text-green-500" : "text-transparent"
+          }`}
+        >
+          {addToCartMessage || "Placeholder"}
+        </p>
       </div>
 
       {user.isAdmin && (
         <div className="mt-10 mb-48">
           <form onSubmit={handleUpdate} className="space-y-4">
-            <h2 className="text-2xl font-bold">Update Item</h2>
+            <h2 className="text-2xl font-bold text-white">Update Item</h2>
             <div>
-              <label htmlFor="itemName" className="font-bold">
+              <label htmlFor="itemName" className="font-bold text-white">
                 Name
               </label>
               <input
@@ -129,7 +133,7 @@ const SingleItem = () => {
               />
             </div>
             <div>
-              <label htmlFor="itemPrice" className="font-bold">
+              <label htmlFor="itemPrice" className="font-bold text-white">
                 Price
               </label>
               <input
@@ -141,7 +145,7 @@ const SingleItem = () => {
               />
             </div>
             <div>
-              <label htmlFor="itemDescription" className="font-bold">
+              <label htmlFor="itemDescription" className="font-bold text-white">
                 Description
               </label>
               <input
@@ -153,7 +157,7 @@ const SingleItem = () => {
               />
             </div>
             <div>
-              <label htmlFor="itemImage" className="font-bold">
+              <label htmlFor="itemImage" className="font-bold text-white">
                 Image
               </label>
               <input
@@ -164,28 +168,37 @@ const SingleItem = () => {
                 className="border border-gray-300 p-2 rounded-md w-full"
               />
             </div>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200"
-            >
-              Update Item
-            </button>
+            <div className="flex justify-around">
+              <button
+                type="submit"
+                className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition-colors duration-200"
+              >
+                Update Item
+              </button>
+              <button
+                onClick={handleDelete}
+                className="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600 transition-colors duration-200"
+              >
+                Delete Item
+              </button>
+            </div>
+            <div className="flex justify-center mt-4 message-container">
+              {updateMessage && (
+                <p className="font-bold text-xl text-red-500 mt-4 message">
+                  {updateMessage}
+                </p>
+              )}
+              {deleteMessage && (
+                <p className="font-bold text-xl text-red-500 mt-4 message">
+                  {deleteMessage}
+                </p>
+              )}
+            </div>
           </form>
-          <button
-            onClick={handleDelete}
-            className="bg-red-500 text-white py-2 px-4 rounded-full hover:bg-red-600 transition-colors duration-200 mt-4"
-          >
-            Delete Item
-          </button>
-          {updateMessage && (
-            <p className="text-green-500 font-bold mt-4">{updateMessage}</p>
-          )}
-          {deleteMessage && (
-            <p className="text-red-500 font-bold mt-4">{deleteMessage}</p>
-          )}
         </div>
       )}
     </div>
   );
 };
+
 export default SingleItem;
