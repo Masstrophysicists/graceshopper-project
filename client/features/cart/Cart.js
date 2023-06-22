@@ -18,9 +18,7 @@ function Cart() {
 
   useEffect(() => {
     const fetchCartItems = async () => {
-      const response = await axios.get(
-        `http://localhost:8080/api/cart/${userId}`
-      );
+      const response = await axios.get(`api/cart/${userId}`);
       setCartItems(response.data);
       console.log("looky here", response.data);
     };
@@ -32,9 +30,10 @@ function Cart() {
   console.log("THIS IS OUR CART SO FAAAR:", cartItems);
 
   async function createOrders() {
-    fetch("/api/cart/empty", {
+    fetch(`api/cart/empty/${userId}`, {
       headers: { authorization: localStorage.token },
     }).then(dispatch(me()));
+    setCartItems([]);
   }
 
   return (

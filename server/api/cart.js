@@ -7,11 +7,13 @@ module.exports = router;
 
 router.get("/:userId", async (req, res) => {
   const id = req.params.userId;
-  console.log("this is the req bodyyyy........", id);
 
   let cart = await Cart.findOne({
     where: { status: "created", userId: id },
   });
+  if (!cart) {
+    cart = await Cart.create({ status: "created", userId: id });
+  }
   let cartItems = await OrderItem.findAll({
     where: { cartId: cart.id },
   });
@@ -98,16 +100,16 @@ router.get("/remove/:id", async (req, res) => {
   res.send(user);
 });
 
-router.get("/empty", async (req, res) => {
-  const user = req.user;
+router.get("/empty/:userId", async (req, res) => {
+  const id = req.params.userId;
   await Cart.update(
     { status: "completed" },
     {
-      where: { status: "created", userId: user.id },
+      where: { status: "created", userId: id },
     }
   );
 
-  res.send(user);
+  res.send();
 });
 
 module.exports = router;

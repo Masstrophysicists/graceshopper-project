@@ -23,9 +23,7 @@ const SingleItem = () => {
   }, [itemId]);
 
   const fetchItem = async () => {
-    const response = await axios.get(
-      `http://localhost:8080/api/items/${itemId}`
-    );
+    const response = await axios.get(`/api/items/${itemId}`);
     setItem(response.data);
     setItem(response.data);
     setItemName(response.data.name);
