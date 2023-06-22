@@ -16,7 +16,7 @@ function Cart() {
 
   useEffect(() => {
     const fetchCartItems = async () => {
-      const response = await axios.get(`api/cart/${userId}`);
+      const response = await axios.get(`/api/cart/${userId}`);
       setCartItems(response.data);
     };
 

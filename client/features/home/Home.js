@@ -20,7 +20,6 @@ const Home = () => {
         <span className="text-white font-bold text-shadow">{username}!</span>
       </h3>
       <h1 className="text-5xl font-bold text-center text-shadow text-white mb-10 px-10">
-        {/* Make the text white */}
         Discover the Charm of Our Virtual Farmer's Market
       </h1>
       <div
